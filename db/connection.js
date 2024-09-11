@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
 const ENV = process.env.NODE_ENV || "development";
 
@@ -15,4 +15,4 @@ function connectDB() {
   return mongoose.connect(MONGO_URI);
 }
 
-export default connectDB;
+module.exports = connectDB;

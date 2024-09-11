@@ -1,7 +1,6 @@
-import { schedule } from "agenda/dist/agenda/schedule";
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-const taskInstanceSchema = new mongoose.Schema(
+const TaskInstanceSchema = new mongoose.Schema(
   {
     template: {
       type: mongoose.Schema.Types.ObjectId,
@@ -24,6 +23,9 @@ const taskInstanceSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+const TaskInstance = mongoose.model("TaskInstance", TaskInstanceSchema);
+module.exports = TaskInstance;
 
 /*
 

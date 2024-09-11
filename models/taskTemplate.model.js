@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const TaskTemplateSchema = mongoose.Schema(
   {
@@ -32,7 +32,7 @@ const TaskTemplateSchema = mongoose.Schema(
 );
 
 const TaskTemplate = mongoose.model("TaskTemplate", TaskTemplateSchema);
-export default TaskTemplate;
+module.exports = TaskTemplate;
 
 // This is the template for each task and it defines the structure of the task and its recurrence behavior it doenst include any information about an instance of the task such as completion etc.
 // Just think that each day when we want a fresh set of untouched daily tasks we need a template for these

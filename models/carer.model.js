@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const CarerSchema = new mongoose.Schema(
   {
@@ -18,4 +18,4 @@ The { timestamps: true } option in Mongoose automatically adds two fields to the
 */
 
 const Carer = mongoose.model(Carer, CarerSchema);
-export default Carer;
+module.exports = Carer;
