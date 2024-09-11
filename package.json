@@ -3,21 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
+    "seed-prod": "NODE_ENV=production npm run seed.js",
     "serve": "node app.js",
     "prepare": "husky",
+    "seed": "node ./db/seeds/run-seed.js",
     "dev": "nodemon listen.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "type": "module",
   "dependencies": {
     "agenda": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongo-seeding": "^4.0.0",
     "mongodb": "6.8",
     "mongoose": "^8.6.1"
   },
