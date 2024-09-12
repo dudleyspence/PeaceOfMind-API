@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 
 const GuardianSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     phone: String,
     relationToPatient: String,
     patients: [{ type: mongoose.Schema.Types.ObjectId, ref: "Patient" }],
@@ -11,5 +10,5 @@ const GuardianSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Guardian = mongoose.model(Guardian, GuardianSchema);
+const Guardian = mongoose.model("Guardian", GuardianSchema);
 module.exports = Guardian;

@@ -1,18 +1,16 @@
 [
   {
-    "_id": "1",
-    "name": "Emily Smith",
-    "relationship": "Daughter",
-    "email": "emily.smith@example.com",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c3" },
+    "user": "11",
+    "relationToPatient": "Daughter",
     "phone": "987-654-3210",
-    "patients": ["1"]
+    "patients": [{ "$oid": "66e31b0dcdd5353bc16957c5" }]
   },
   {
-    "_id": "2",
-    "name": "Michael Smith",
-    "relationship": "Son",
-    "email": "michael.smith@example.com",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c4" },
+    "user": "12",
+    "relationToPatient": "Son",
     "phone": "876-543-2109",
-    "patients": ["1"]
+    "patients": [{ "$oid": "66e31b0dcdd5353bc16957c5" }]
   }
 ]
