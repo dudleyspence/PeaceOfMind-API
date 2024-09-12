@@ -1,11 +1,8 @@
 const { Seeder } = require("mongo-seeding");
-const dotenv = require("dotenv");
 const path = require("path");
+const getEnv = require("../../loadEnvironment");
 
-const ENV = process.env.NODE_ENV || "development";
-dotenv.config({ path: `.env.${ENV}` });
-
-const MONGO_URI = process.env.MONGO_URI || process.env.DATABASE_URL;
+const { ENV, MONGO_URI } = getEnv();
 
 let dataPath;
 
