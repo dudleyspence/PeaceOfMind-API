@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --silent=false --detectOpenHandles",
     "seed-prod": "NODE_ENV=production npm run seed.js",
     "serve": "node app.js",
     "prepare": "husky",
     "seed": "node ./db/seeds/run-seed.js",
-    "dev": "nodemon listen.js"
+    "dev": "NODE_ENV=development nodemon listen.js",
+    "generate-docs": "node swagger.js"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,10 @@
     "express": "^4.19.2",
     "mongo-seeding": "^4.0.0",
     "mongodb": "6.8",
-    "mongoose": "^8.6.1"
+    "mongoose": "^8.6.1",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "husky": "^9.1.5",

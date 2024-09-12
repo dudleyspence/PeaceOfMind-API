@@ -1,137 +1,138 @@
 [
   {
-    "_id": "1",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c6" },
     "text": "Morning hygiene routine",
     "isDaySpecific": false,
     "category": "Hygiene",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "2",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c7" },
     "text": "Breakfast",
     "isDaySpecific": false,
     "category": "Meals",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "3",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c8" },
     "text": "Take morning medication",
     "isDaySpecific": false,
     "category": "Medical",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "4",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c9" },
     "text": "Lunch",
     "isDaySpecific": false,
     "category": "Meals",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "5",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957ca" },
     "text": "Afternoon walk",
     "isDaySpecific": false,
-    "category": "Additional",
+    "category": "Exercise",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "6",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957cb" },
     "text": "Dinner",
     "isDaySpecific": false,
     "category": "Meals",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "7",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957cc" },
     "text": "Evening medication",
     "isDaySpecific": false,
     "category": "Medical",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "8",
-    "text": "Bedtime routine",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957cd" },
+    "text": "Bedtime preparation",
     "isDaySpecific": false,
     "category": "Hygiene",
     "repeatInterval": "daily",
-    "patient": "1",
-    "carer": "1"
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "9",
-    "text": "Doctor's appointment",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957ce" },
+    "text": "Weekly check-up at clinic",
     "isDaySpecific": true,
-    "repeatInterval": "none",
-    "scheduledDate": "2024-09-01T15:00:00Z",
-    "patient": "1",
-    "carer": "1"
+    "category": "Medical",
+    "repeatInterval": "weekly",
+    "repeatEndDate": "2024-12-31T00:00:00Z",
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "10",
-    "text": "Visit from physiotherapist",
-    "isDaySpecific": true,
-    "repeatInterval": "none",
-    "scheduledDate": "2024-09-02T14:00:00Z",
-    "patient": "1",
-    "carer": "1"
-  },
-  {
-    "_id": "11",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957cf" },
     "text": "Family visit",
     "isDaySpecific": true,
-    "repeatInterval": "none",
-    "scheduledDate": "2024-09-03T11:00:00Z",
-    "patient": "1",
-    "carer": "1"
+    "category": "Social",
+    "repeatInterval": "weekly",
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "12",
-    "text": "Scheduled hairdresser appointment",
-    "isDaySpecific": true,
-    "repeatInterval": "none",
-    "scheduledDate": "2024-09-04T10:00:00Z",
-    "patient": "1",
-    "carer": "1"
+    "_id": { "$oid": "66e31b0dcdd5353bc16957d0" },
+    "text": "Gardening",
+    "isDaySpecific": false,
+    "category": "Hobby",
+    "repeatInterval": "weekly",
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "13",
-    "text": "Grocery delivery",
-    "isDaySpecific": true,
-    "repeatInterval": "none",
-    "scheduledDate": "2024-09-05T12:30:00Z",
-    "patient": "1",
-    "carer": "1"
+    "_id": { "$oid": "66e31b0dcdd5353bc16957d1" },
+    "text": "Music therapy session",
+    "isDaySpecific": false,
+    "category": "Therapy",
+    "repeatInterval": "weekly",
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "14",
-    "text": "Dentist appointment",
-    "isDaySpecific": true,
-    "repeatInterval": "none",
-    "scheduledDate": "2024-09-06T16:00:00Z",
-    "patient": "1",
-    "carer": "1"
+    "_id": { "$oid": "66e31b0dcdd5353bc16957d2" },
+    "text": "Memory games",
+    "isDaySpecific": false,
+    "category": "Cognitive",
+    "repeatInterval": "biweekly",
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
-    "_id": "15",
-    "text": "Eye check-up",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957d3" },
+    "text": "Pet therapy session",
+    "isDaySpecific": false,
+    "category": "Therapy",
+    "repeatInterval": "monthly",
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66e31b0dcdd5353bc16957d4" },
+    "text": "Attend spiritual service",
     "isDaySpecific": true,
-    "repeatInterval": "none",
-    "scheduledDate": "2024-09-07T09:00:00Z",
-    "patient": "1",
-    "carer": "1"
+    "category": "Spiritual",
+    "repeatInterval": "weekly",
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   }
 ]

@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-const getEnv = require("../loadEnvironment");
-
-const { ENV, MONGO_URI } = getEnv();
+const { ENV, MONGO_URI } = require("../config/loadEnvironment");
 
 console.log(`Environment: ${ENV}`);
 

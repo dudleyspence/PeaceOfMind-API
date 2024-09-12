@@ -1,10 +1,9 @@
 [
   {
-    "_id": "1",
-    "name": "John Doe",
-    "email": "john.doe@example.com",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c2" },
+    "user": "10",
     "phone": "123-456-7890",
     "address": "123 Main St, Anytown",
-    "patients": ["1"]
+    "patients": [{ "$oid": "66e31b0dcdd5353bc16957c5" }]
   }
 ]

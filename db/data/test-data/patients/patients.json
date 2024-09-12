@@ -1,10 +1,14 @@
 [
   {
-    "_id": "1",
+    "_id": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "name": "Jane Smith",
     "age": 80,
     "address": "456 Elm St, Othertown",
-    "guardians": ["1", "2"],
-    "carer": "1"
+    "guardians": [
+      { "$oid": "66e31b0dcdd5353bc16957c3" },
+      { "$oid": "66e31b0dcdd5353bc16957c4" }
+    ],
+    "carers": [{ "$oid": "66e31b0dcdd5353bc16957c2" }],
+    "medicalConditions": ["Arthritis"]
   }
 ]
