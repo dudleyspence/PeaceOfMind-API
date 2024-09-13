@@ -7,6 +7,11 @@ const routers = require("./routes/index.routes");
 const app = express();
 
 app.use(express.json());
+const {
+  handleServerError,
+  handleCustomError,
+  handlePSQLErrors,
+} = require("./errors/errors");
 
 app.get("/api", function (req, res) {
   res.status(200).send("Hello World");
@@ -23,5 +28,10 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.all("*", (request, response) => {
   response.status(404).send({ msg: "Not Found!" });
 });
+
+//Error Handling
+app.use(handlePSQLErrors);
+app.use(handleCustomError);
+app.use(handleServerError);
 
 module.exports = app;

@@ -99,29 +99,6 @@ exports.getPatientComments = (req, res, next) => {
     .catch(next);
 };
 
-exports.getPatientComments = (req, res, next) => {
-  const { patient_id } = req.params;
-  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
-    return res.status(400).send({ message: "Bad Request" });
-  }
-
-  Patient.findById(patient_id)
-    .then((patient) => {
-      if (!patient) {
-        return res.status(404).send({ message: "Patient not found" });
-      }
-      return Comment.find({ patient: patient_id });
-    })
-    .then((comments) => {
-      if (comments.length === 0) {
-        return res.status(200).send([]);
-      } else {
-        return res.status(200).send(comments);
-      }
-    })
-    .catch(next);
-};
-
 exports.getPatientTaskTemplates = (req, res, next) => {
   const { patient_id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(patient_id)) {
@@ -164,6 +141,56 @@ exports.getPatientTaskInstances = (req, res, next) => {
       } else {
         return res.status(200).send(TaskInstance);
       }
+    })
+    .catch(next);
+};
+
+exports.addNewPatient = (req, res, next) => {
+  const newPatient = new Patient(req.body);
+  newPatient
+    .save()
+    .then((patient) => {
+      const guardianId = patient.guardians[0];
+
+      return Guardian.findByIdAndUpdate(
+        guardianId,
+        { $addToSet: { patients: patient._id } },
+        { new: true }
+      )
+        .then((updatedGuardian) => {
+          if (!updatedGuardian) {
+            return res.status(404).send({ message: "Guardian not found" });
+          }
+          return res.status(201).send(patient);
+        })
+        .catch(next);
+    })
+    .catch((err) => {
+      if (err.name === "ValidationError") {
+        return res.status(400).send({
+          message: "Validation Error: Some of the data is missing or incorrect",
+        });
+      }
+      next(err);
+    });
+};
+
+exports.updatePatientInfo = (req, res, next) => {
+  const { patient_id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
+    return res.status(400).send({ message: "Bad Request" });
+  }
+  const updates = req.body;
+
+  Patient.findByIdAndUpdate(patient_id, updates, {
+    new: true, // returns the new version
+    runValidators: true, // ensures conformaty to the schema
+  })
+    .then((updatedPatient) => {
+      if (!updatedPatient) {
+        return res.status(404).send({ message: "Patient not found" });
+      }
+      res.status(200).send(updatedPatient);
     })
     .catch(next);
 };

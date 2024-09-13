@@ -7,7 +7,15 @@ const PatientSchema = new mongoose.Schema(
     age: Number,
     medicalConditions: [String],
     carers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Carer" }],
-    guardians: [{ type: mongoose.Schema.Types.ObjectId, ref: "Guardian" }],
+    guardians: {
+      type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Guardian" }],
+      validate: [
+        (v) => {
+          return v.length > 0;
+        },
+      ],
+      required: true,
+    },
   },
   { timestamps: true }
 );

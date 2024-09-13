@@ -7,6 +7,8 @@ const {
   getPatientComments,
   getPatientTaskTemplates,
   getPatientTaskInstances,
+  addNewPatient,
+  updatePatientInfo,
 } = require("../controllers/patient.controller");
 
 router.get("/patients/:patient_id", getPatientById);
@@ -15,5 +17,7 @@ router.get("/patients/:patient_id/guardians", getPatientGuardians);
 router.get("/patients/:patient_id/comments", getPatientComments);
 router.get("/patients/:patient_id/task-templates", getPatientTaskTemplates);
 router.get("/patients/:patient_id/task-instances", getPatientTaskInstances);
+router.post("/patients", addNewPatient);
+router.patch("/patients/:patient_id", updatePatientInfo);
 
 module.exports = router;

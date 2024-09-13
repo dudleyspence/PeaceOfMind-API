@@ -32,6 +32,66 @@ describe("app", () => {
   });
 
   describe("Patient", () => {
+    describe("/api/patients", () => {
+      describe("POST", () => {
+        test("201: creates a new patient and returns the patient object", () => {
+          const newPatient = {
+            name: "John Doe",
+            description: "John is a nice man who enjoys gardening and sudoku",
+            age: 45,
+            guardians: ["66e31b0dcdd5353bc16957c3"],
+            carers: [],
+          };
+          return request(app)
+            .post("/api/patients")
+            .send(newPatient)
+            .expect(201)
+            .then(({ body }) => {
+              expect(body).toMatchObject({
+                _id: expect.any(String),
+                name: newPatient.name,
+                age: newPatient.age,
+                guardians: expect.any(Array),
+                carers: expect.any(Array),
+              });
+            });
+        });
+        test("400: error if no guardians are provided", () => {
+          const newPatient = {
+            name: "test man",
+            description: "testing",
+            age: "45",
+            guardians: [],
+            carers: [],
+          };
+          return request(app)
+            .post("/api/patients")
+            .send(newPatient)
+            .expect(400)
+            .then(({ body }) => {
+              expect(body.message).toBe(
+                "Validation Error: Some of the data is missing or incorrect"
+              );
+            });
+        });
+        test("400: returns error when given invalid data types", () => {
+          const invalidPatient = {
+            age: "invalid_age",
+            guardians: ["66e31b0dcdd5353bc16957c3"],
+          };
+
+          return request(app)
+            .post("/api/patients")
+            .send(invalidPatient)
+            .expect(400)
+            .then(({ body }) => {
+              expect(body.message).toBe(
+                "Validation Error: Some of the data is missing or incorrect"
+              );
+            });
+        });
+      });
+    });
     describe("/api/patients/:patient_id", () => {
       describe("GET", () => {
         test("200: returns patient when given patient id", () => {
@@ -63,6 +123,25 @@ describe("app", () => {
             .expect(404)
             .then(({ body }) => {
               expect(body.message).toBe("Patient not found");
+            });
+        });
+      });
+      describe("PATCH", () => {
+        test("200: returns updated patient", () => {
+          const patientUpdate = { age: 75 };
+          return request(app)
+            .patch("/api/patients/66e31b0dcdd5353bc16957c5")
+            .send(patientUpdate)
+            .expect(200)
+            .then(({ body }) => {
+              expect(body).toMatchObject({
+                _id: expect.any(String),
+                name: expect.any(String),
+                age: 75,
+                address: expect.any(String),
+                guardians: expect.any(Array),
+                carers: expect.any(Array),
+              });
             });
         });
       });
@@ -251,13 +330,46 @@ describe("app", () => {
               expect(body.message).toBe("Bad Request");
             });
         });
-
         test("404: Returns not found when given a patient_id that is valid but the patient doesnt exist", () => {
           return request(app)
             .get("/api/patients/66e31b0dcdd5353bc16958a3/task-instances")
             .expect(404)
             .then(({ body }) => {
               expect(body.message).toBe("Patient not found");
+            });
+        });
+      });
+    });
+  });
+
+  describe("Gardian", () => {
+    describe("PATCH", () => {
+      describe("/api/guardian/:guardian_id/patients", () => {
+        test("200: returns the updates guardian with the added patient", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
+          return request(app)
+            .patch("/api/guardian/66e31b0dcdd5353bc16957c4/patients")
+            .send(patient)
+            .expect(200)
+            .then(({ body }) => {
+              expect(body.patients).toContain("66e31b0dcdd5353bc16952a5");
+            });
+        });
+      });
+    });
+  });
+
+  describe("Carer", () => {
+    describe("PATCH", () => {
+      describe("/api/carer/:carer_id/patients", () => {
+        test("200: returns the updated carer with the added patient", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
+          return request(app)
+            .patch("/api/carer/66e31b0dcdd5353bc16957c2/patients")
+            .send(patient)
+            .expect(200)
+            .then(({ body }) => {
+              expect(body.patients).toContain("66e31b0dcdd5353bc16952a5");
             });
         });
       });
