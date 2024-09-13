@@ -7,19 +7,22 @@ gets patient by ID
 **Patients**
 
 - Get a patient by ID
-  /api/patients/:patient_id
+  /api/patients/:patient_id - DONE
 
 - Get all carers associated with a single patient
-  /api/patients/:patient_id/carers
+  /api/patients/:patient_id/carers - DONE
 
 - Get all comments associated with a single patient
-  /api/patients/:patient_id/comments
+  /api/patients/:patient_id/comments -DONE
 
 - Get all guardians associated with a single patient
-  /api/patients/:patient_id/guardians
+  /api/patients/:patient_id/guardians - DONE
 
-- Get all guardians associated with a single patient
-  /api/patients/:patient_id/guardians
+- Get all task templates associated with a single patient
+  /api/patients/:patient_id/task-templates - DONE
+
+- Get all task templates associated with a single patient
+  /api/patients/:patient_id/task-instances - DONE
 
 **Carers**
 

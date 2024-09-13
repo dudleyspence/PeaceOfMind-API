@@ -12,12 +12,12 @@ const doc = {
 const outputFile = "./swagger-output.json"; // The generated Swagger file
 const routes = [
   "../app.js",
-  "../routes/carerRoutes.js",
-  "../routes/commentRoutes.js",
-  "../routes/fileRoutes.js",
-  "../routes/patientRoutes.js",
-  "../routes/taskRoutes.js",
-  "../routes/guardianRoutes.js",
+  "../routes/carer.routes.js",
+  "../routes/comment.routes.js",
+  "../routes/file.routes.js",
+  "../routes/patient.routes.js",
+  "../routes/task.routes.js",
+  "../routes/guardian.routes.js",
 ];
 
 // Generate the Swagger documentation
