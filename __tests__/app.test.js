@@ -396,11 +396,20 @@ describe("app", () => {
             .then(({ body }) => {
               expect(body).toMatchObject({
                 _id: expect.any(String),
-                user: "11",
+                user: expect.any(Object),
                 relationToPatient: "Daughter",
                 phone: "987-654-3210",
                 patients: expect.any(Array),
               });
+            });
+        });
+        test("404: returns not found when the user_id doesnt relate to a guardian", () => {
+          return request(app)
+            .get("/api/guardian/1")
+            .expect(404)
+            .then(({ body }) => {
+              console.log(body);
+              expect(body.message).toBe("Guardian not found");
             });
         });
       });

@@ -52,12 +52,13 @@ exports.addExistingPatientToGuardian = (req, res, next) => {
 exports.getGardianByUserId = (req, res, next) => {
   const { user_id } = req.params;
 
-  Guardian.find({ user: user_id })
+  Guardian.findOne({ user: user_id })
+    .populate("user")
     .then((guardian) => {
-      if (guardian.length === 0) {
+      if (!guardian) {
         return res.status(404).send({ message: "Guardian not found" });
       }
-      return res.status(200).send(guardian[0]);
+      return res.status(200).send(guardian);
     })
     .catch(next);
 };
