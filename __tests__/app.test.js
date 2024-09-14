@@ -343,8 +343,8 @@ describe("app", () => {
   });
 
   describe("Gardian", () => {
-    describe("PATCH", () => {
-      describe("/api/guardian/:guardian_id/patients", () => {
+    describe("/api/guardian/:guardian_id/patients", () => {
+      describe("PATCH", () => {
         test("200: returns the updates guardian with the added patient", () => {
           const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
           return request(app)
@@ -355,13 +355,43 @@ describe("app", () => {
               expect(body.patients).toContain("66e31b0dcdd5353bc16952a5");
             });
         });
+        test("400: Returns not found when given a guardian_id that isnt valid", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
+          return request(app)
+            .patch("/api/guardian/notreal-id/patients")
+            .send(patient)
+            .expect(400)
+            .then(({ body }) => {
+              expect(body.message).toBe("Bad Request: Invalid Guardian ID");
+            });
+        });
+        test("404: Returns not found when given a guardian_id that is valid but the guardian doesnt exist", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
+          return request(app)
+            .patch("/api/guardian/66e31b0dcdd5353bc16951a3/patients")
+            .send(patient)
+            .expect(404)
+            .then(({ body }) => {
+              expect(body.message).toBe("Guardian not found");
+            });
+        });
+        test("404: Returns not found when given a patient that doesnt exist", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952c5" };
+          return request(app)
+            .patch("/api/guardian/66e31b0dcdd5353bc16957c4/patients")
+            .send(patient)
+            .expect(404)
+            .then(({ body }) => {
+              expect(body.message).toBe("Patient not found");
+            });
+        });
       });
     });
   });
 
   describe("Carer", () => {
-    describe("PATCH", () => {
-      describe("/api/carer/:carer_id/patients", () => {
+    describe("/api/carer/:carer_id/patients", () => {
+      describe("PATCH", () => {
         test("200: returns the updated carer with the added patient", () => {
           const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
           return request(app)
@@ -370,6 +400,36 @@ describe("app", () => {
             .expect(200)
             .then(({ body }) => {
               expect(body.patients).toContain("66e31b0dcdd5353bc16952a5");
+            });
+        });
+        test("400: Returns not found when given a carer_id that isnt valid", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
+          return request(app)
+            .patch("/api/carer/notreal-id/patients")
+            .send(patient)
+            .expect(400)
+            .then(({ body }) => {
+              expect(body.message).toBe("Bad Request: Invalid Carer ID");
+            });
+        });
+        test("404: Returns not found when given a carer_id that is valid but the carer doesnt exist", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952a5" };
+          return request(app)
+            .patch("/api/carer/66e31b0dcdd5353bc16951c2/patients")
+            .send(patient)
+            .expect(404)
+            .then(({ body }) => {
+              expect(body.message).toBe("Carer not found");
+            });
+        });
+        test("404: Returns not found when given a patient that doesnt exist", () => {
+          const patient = { patient_id: "66e31b0dcdd5353bc16952c5" };
+          return request(app)
+            .patch("/api/carer/66e31b0dcdd5353bc16957c2/patients")
+            .send(patient)
+            .expect(404)
+            .then(({ body }) => {
+              expect(body.message).toBe("Patient not found");
             });
         });
       });

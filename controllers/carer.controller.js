@@ -13,7 +13,7 @@ exports.addExistingPatientToCarer = (req, res, next) => {
   const { patient_id } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(carer_id)) {
-    return res.status(400).send({ message: "Bad Request: Invalid carer ID" });
+    return res.status(400).send({ message: "Bad Request: Invalid Carer ID" });
   }
 
   if (!mongoose.Types.ObjectId.isValid(patient_id)) {
@@ -27,7 +27,7 @@ exports.addExistingPatientToCarer = (req, res, next) => {
   )
     .then((updatedcarer) => {
       if (!updatedcarer) {
-        return res.status(404).send({ message: "carer not found" });
+        return res.status(404).send({ message: "Carer not found" });
       }
 
       return Patient.findByIdAndUpdate(
