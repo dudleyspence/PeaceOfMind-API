@@ -9,7 +9,7 @@
     "prepare": "husky",
     "seed": "node ./db/seeds/run-seed.js",
     "dev": "NODE_ENV=development nodemon listen.js",
-    "generate-docs": "node swagger.js"
+    "generate-docs": "node ./docs/swagger.js"
   },
   "keywords": [],
   "author": "",
