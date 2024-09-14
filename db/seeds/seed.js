@@ -15,6 +15,9 @@ function seedData() {
     database: MONGO_URI,
     dropDatabase: true,
   });
+  console.log(ENV, "<<< Seed ENV");
+  console.log(MONGO_URI), "Seed MONGO_URI";
+
   const resolvedPath = path.resolve(__dirname, dataPath);
 
   const collectionReadingOptions = {
