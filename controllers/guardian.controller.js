@@ -48,3 +48,16 @@ exports.addExistingPatientToGuardian = (req, res, next) => {
       next(err);
     });
 };
+
+exports.getGardianByUserId = (req, res, next) => {
+  const { user_id } = req.params;
+
+  Guardian.find({ user: user_id })
+    .then((guardian) => {
+      if (guardian.length === 0) {
+        return res.status(404).send({ message: "Guardian not found" });
+      }
+      return res.status(200).send(guardian[0]);
+    })
+    .catch(next);
+};

@@ -387,6 +387,24 @@ describe("app", () => {
         });
       });
     });
+    describe("/api/guardian/:user_id", () => {
+      describe("GET", () => {
+        test("200: returns the guardian info when given the user_id", () => {
+          return request(app)
+            .get("/api/guardian/11")
+            .expect(200)
+            .then(({ body }) => {
+              expect(body).toMatchObject({
+                _id: expect.any(String),
+                user: "11",
+                relationToPatient: "Daughter",
+                phone: "987-654-3210",
+                patients: expect.any(Array),
+              });
+            });
+        });
+      });
+    });
   });
 
   describe("Carer", () => {
