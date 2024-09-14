@@ -12,12 +12,5 @@
     "relationToPatient": "Son",
     "phone": "876-543-2109",
     "patients": [{ "$oid": "66e31b0dcdd5353bc16957c5" }]
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16958q1" },
-    "user": "14",
-    "relationToPatient": "Friend",
-    "phone": "876-543-2109",
-    "patients": []
   }
 ]
