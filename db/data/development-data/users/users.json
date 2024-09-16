@@ -2,18 +2,21 @@
   {
     "_id": "10",
     "name": "John Doe",
+    "profileImageURL": "https://i0.wp.com/familychoicehealthcare.com/wp-content/uploads/2021/04/AdobeStock_58540776-900px.jpg?resize=900%2C596&ssl=1",
     "email": "john.doe@example.com",
     "role": "carer"
   },
   {
     "_id": "11",
     "name": "Jane Smith",
+    "profileImageURL": "https://www.shutterstock.com/image-photo/adult-female-avatar-image-on-260nw-2420293027.jpg",
     "email": "jane.smith@example.com",
     "role": "guardian"
   },
   {
     "_id": "12",
-    "name": "Emily Johnson",
+    "name": "Ethan Johnson",
+    "profileImageURL": "https://t4.ftcdn.net/jpg/06/66/10/17/360_F_666101742_jQ4lZjz7HFgXZqAyHDoaXCTcXHXHKUwN.jpg",
     "email": "emily.johnson@example.com",
     "role": "guardian"
   }

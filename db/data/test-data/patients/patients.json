@@ -1,9 +1,10 @@
 [
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "name": "Jane Smith",
+    "name": "Patricia Field",
     "age": 80,
     "address": "456 Elm St, Othertown",
+    "profileImageURL": "https://i0.wp.com/familychoicehealthcare.com/wp-content/uploads/2021/04/AdobeStock_58540776-900px.jpg?resize=900%2C596&ssl=1",
     "guardians": [
       { "$oid": "66e31b0dcdd5353bc16957c3" },
       { "$oid": "66e31b0dcdd5353bc16957c4" }
@@ -13,9 +14,10 @@
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16952a5" },
-    "name": "Old man",
+    "name": "Duncan Field",
     "age": 99,
     "address": "456 Elm St, Othertown",
+    "profileImageURL": "https://pics.craiyon.com/2023-07-02/2155f99161a94bfe953f252d4cd7c376.webp",
     "guardians": [{ "$oid": "66e31b0dcdd5353bc16957c3" }],
     "carers": [],
     "medicalConditions": []

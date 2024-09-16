@@ -104,6 +104,7 @@ describe("app", () => {
                 name: expect.any(String),
                 age: expect.any(Number),
                 address: expect.any(String),
+                profileImageURL: expect.any(String),
                 guardians: expect.any(Array),
                 carers: expect.any(Array),
               });
@@ -196,7 +197,6 @@ describe("app", () => {
                   _id: expect.any(String),
                   user: expect.any(String),
                   phone: expect.any(String),
-                  relationToPatient: expect.any(String),
                   patients: expect.any(Array),
                 });
               });
@@ -397,7 +397,6 @@ describe("app", () => {
               expect(body).toMatchObject({
                 _id: expect.any(String),
                 user: expect.any(Object),
-                relationToPatient: "Daughter",
                 phone: "987-654-3210",
                 patients: expect.any(Array),
               });
