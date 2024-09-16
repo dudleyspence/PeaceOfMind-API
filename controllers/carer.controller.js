@@ -46,3 +46,18 @@ exports.addExistingPatientToCarer = (req, res, next) => {
       next(err);
     });
 };
+
+exports.getCarerByUserId = (req, res, next) => {
+  const { user_id } = req.params;
+
+  Carer.findOne({ user: user_id })
+    .populate("user")
+    .populate("patients")
+    .then((carer) => {
+      if (!carer) {
+        return res.status(404).send({ message: "Carer not found" });
+      }
+      return res.status(200).send(carer);
+    })
+    .catch(next);
+};

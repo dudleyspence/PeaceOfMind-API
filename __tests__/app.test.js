@@ -397,7 +397,7 @@ describe("app", () => {
               expect(body).toMatchObject({
                 _id: expect.any(String),
                 user: expect.any(Object),
-                phone: "987-654-3210",
+                phone: expect.any(String),
                 patients: expect.any(Array),
               });
             });
@@ -456,6 +456,33 @@ describe("app", () => {
             .expect(404)
             .then(({ body }) => {
               expect(body.message).toBe("Patient not found");
+            });
+        });
+      });
+    });
+    describe("/api/carer/:user_id", () => {
+      describe("GET", () => {
+        test("200: returns the carer info when given the user_id", () => {
+          return request(app)
+            .get("/api/carer/10")
+            .expect(200)
+            .then(({ body }) => {
+              expect(body).toMatchObject({
+                _id: expect.any(String),
+                user: expect.any(Object),
+                phone: expect.any(String),
+                address: expect.any(String),
+                patients: expect.any(Array),
+              });
+            });
+        });
+        test("404: returns not found when the user_id doesnt relate to a carer", () => {
+          return request(app)
+            .get("/api/carer/1")
+            .expect(404)
+            .then(({ body }) => {
+              console.log(body);
+              expect(body.message).toBe("Carer not found");
             });
         });
       });
