@@ -16,8 +16,6 @@ function seedData() {
     dropDatabase: true,
     authMechanism: "SCRAM-SHA-1",
   });
-  console.log(ENV, "<<< Seed ENV");
-  console.log(MONGO_URI), "Seed MONGO_URI";
 
   const resolvedPath = path.resolve(__dirname, dataPath);
 
@@ -26,7 +24,10 @@ function seedData() {
     ejsonParseOptions: {
       relaxed: false,
     },
-    transformers: [Seeder.Transformers.replaceDocumentIdWithUnderscoreId],
+    transformers: [
+      Seeder.Transformers.replaceDocumentIdWithUnderscoreId,
+      Seeder.Transformers.setTimestamps,
+    ],
   };
 
   const collections = seeder.readCollectionsFromPath(
