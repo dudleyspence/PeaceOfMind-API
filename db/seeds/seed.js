@@ -14,7 +14,7 @@ function seedData() {
   const seeder = new Seeder({
     database: MONGO_URI,
     dropDatabase: true,
-    authMechanism: "SCRAM-SHA-256",
+    authMechanism: "SCRAM-SHA-1",
   });
   console.log(ENV, "<<< Seed ENV");
   console.log(MONGO_URI), "Seed MONGO_URI";
