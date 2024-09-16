@@ -34,7 +34,14 @@ function seedData() {
     collectionReadingOptions
   );
 
-  return seeder.import(collections);
+  return seeder
+    .import(collections)
+    .then(() => {
+      console.log("Seeding completed successfully!");
+    })
+    .catch((err) => {
+      console.error("Seeding failed:", err);
+    });
 }
 
 module.exports = seedData;
