@@ -54,6 +54,7 @@ exports.getGardianByUserId = (req, res, next) => {
 
   Guardian.findOne({ user: user_id })
     .populate("user")
+    .populate("patients")
     .then((guardian) => {
       if (!guardian) {
         return res.status(404).send({ message: "Guardian not found" });

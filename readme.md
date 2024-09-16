@@ -68,5 +68,3 @@ gets patient by ID
 
 - add queries to GET tasks
   e.g. ?completed=false
-
--
