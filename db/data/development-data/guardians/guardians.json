@@ -3,7 +3,10 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957c3" },
     "user": "11",
     "phone": "987-654-3210",
-    "patients": [{ "$oid": "66e31b0dcdd5353bc16957c5" }]
+    "patients": [
+      { "$oid": "66e31b0dcdd5353bc16957c5" },
+      { "$oid": "66e31b0dcdd5353bc16952a5" }
+    ]
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c4" },
