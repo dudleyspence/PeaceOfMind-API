@@ -37,7 +37,8 @@ describe("app", () => {
         test("201: creates a new patient and returns the patient object", () => {
           const newPatient = {
             name: "John Doe",
-            description: "John is a nice man who enjoys gardening and sudoku",
+            about: "John is a nice man who enjoys gardening and sudoku",
+            phone: "+447889622311",
             dob: "1944-09-18T12:00:00Z",
             guardians: ["66e31b0dcdd5353bc16957c3"],
             carers: [],

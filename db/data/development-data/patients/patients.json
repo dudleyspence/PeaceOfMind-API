@@ -3,6 +3,8 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "name": "Patricia Field",
     "dob": "1944-09-18T12:00:00Z",
+    "about": "Patricia is a kind-hearted woman known for her love of gardening and spending time with family. She enjoys quiet afternoons and takes comfort in her daily routine.",
+    "phone": "+447513724660",
     "address": "456 Elm St, Othertown",
     "profileImageURL": "https://i.pinimg.com/564x/f5/47/4f/f5474f2155ee298fe93c654b954aa305.jpg",
     "guardians": [
@@ -15,6 +17,8 @@
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16952a5" },
     "name": "Duncan Field",
+    "about": "John is a retired teacher who enjoys reading and solving crossword puzzles. He is a supportive partner and shares a strong bond with his wife Patricia.",
+    "phone": "+447513724651",
     "dob": "1925-09-18T12:00:00Z",
     "address": "456 Elm St, Othertown",
     "profileImageURL": "https://pics.craiyon.com/2023-07-02/2155f99161a94bfe953f252d4cd7c376.webp",
