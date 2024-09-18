@@ -4,6 +4,10 @@
     "user": "10",
     "phone": "123-456-7890",
     "address": "123 Main St, Anytown",
-    "patients": [{ "$oid": "66e31b0dcdd5353bc16957c5" }]
+    "patients": [
+      { "$oid": "66e31b0dcdd5353bc16957c5" },
+      { "$oid": "66e31b0dcdd5353bc16952a5" }
+    ],
+    "about": "As a dedicated carer, I provide compassionate and personalized support to ensure the well-being and comfort of those in my care. With a focus on building trust and maintaining dignity, I work closely with families to create a positive and nurturing environment."
   }
 ]

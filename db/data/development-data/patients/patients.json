@@ -2,7 +2,7 @@
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "name": "Patricia Field",
-    "age": 80,
+    "dob": "1944-09-18T12:00:00Z",
     "address": "456 Elm St, Othertown",
     "profileImageURL": "https://i.pinimg.com/564x/f5/47/4f/f5474f2155ee298fe93c654b954aa305.jpg",
     "guardians": [
@@ -10,16 +10,16 @@
       { "$oid": "66e31b0dcdd5353bc16957c4" }
     ],
     "carers": [{ "$oid": "66e31b0dcdd5353bc16957c2" }],
-    "medicalConditions": ["Arthritis"]
+    "medicalConditions": ["Arthritis", "Alzheimer's disease"]
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16952a5" },
     "name": "Duncan Field",
-    "age": 99,
+    "dob": "1925-09-18T12:00:00Z",
     "address": "456 Elm St, Othertown",
     "profileImageURL": "https://pics.craiyon.com/2023-07-02/2155f99161a94bfe953f252d4cd7c376.webp",
     "guardians": [{ "$oid": "66e31b0dcdd5353bc16957c3" }],
-    "carers": [],
+    "carers": [{ "$oid": "66e31b0dcdd5353bc16957c2" }],
     "medicalConditions": []
   }
 ]

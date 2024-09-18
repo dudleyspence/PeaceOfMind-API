@@ -4,7 +4,8 @@ const PatientSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
-    age: Number,
+    dob: { type: Date, required: true },
+    address: String,
     medicalConditions: [String],
     carers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Carer" }],
     guardians: {

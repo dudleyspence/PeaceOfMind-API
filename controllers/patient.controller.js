@@ -7,6 +7,7 @@ const {
   TaskInstance,
 } = require("../models/index.model");
 const mongoose = require("mongoose");
+const { getAge } = require("../utils/get_age");
 
 exports.getPatientById = (req, res, next) => {
   const { patient_id } = req.params;
@@ -27,8 +28,10 @@ exports.getPatientById = (req, res, next) => {
       if (!patient) {
         return res.status(404).send({ message: "Patient not found" });
       }
-
-      res.status(200).send(patient);
+      const age = getAge(patient.dob);
+      const patientObj = patient.toObject();
+      patientObj.age = age;
+      res.status(200).send(patientObj);
     })
     .catch(next);
 };

@@ -38,7 +38,7 @@ describe("app", () => {
           const newPatient = {
             name: "John Doe",
             description: "John is a nice man who enjoys gardening and sudoku",
-            age: 45,
+            dob: "1944-09-18T12:00:00Z",
             guardians: ["66e31b0dcdd5353bc16957c3"],
             carers: [],
           };
@@ -50,7 +50,6 @@ describe("app", () => {
               expect(body).toMatchObject({
                 _id: expect.any(String),
                 name: newPatient.name,
-                age: newPatient.age,
                 guardians: expect.any(Array),
                 carers: expect.any(Array),
               });
@@ -129,7 +128,7 @@ describe("app", () => {
       });
       describe("PATCH", () => {
         test("200: returns updated patient", () => {
-          const patientUpdate = { age: 75 };
+          const patientUpdate = { address: "123 Spring Lane, Ls176z1" };
           return request(app)
             .patch("/api/patients/66e31b0dcdd5353bc16957c5")
             .send(patientUpdate)
@@ -138,8 +137,7 @@ describe("app", () => {
               expect(body).toMatchObject({
                 _id: expect.any(String),
                 name: expect.any(String),
-                age: 75,
-                address: expect.any(String),
+                address: "123 Spring Lane, Ls176z1",
                 guardians: expect.any(Array),
                 carers: expect.any(Array),
               });
@@ -407,7 +405,6 @@ describe("app", () => {
             .get("/api/guardian/1")
             .expect(404)
             .then(({ body }) => {
-              console.log(body);
               expect(body.message).toBe("Guardian not found");
             });
         });
@@ -473,6 +470,7 @@ describe("app", () => {
                 phone: expect.any(String),
                 address: expect.any(String),
                 patients: expect.any(Array),
+                about: expect.any(String),
               });
             });
         });
@@ -481,7 +479,6 @@ describe("app", () => {
             .get("/api/carer/1")
             .expect(404)
             .then(({ body }) => {
-              console.log(body);
               expect(body.message).toBe("Carer not found");
             });
         });

@@ -6,6 +6,7 @@ const CarerSchema = new mongoose.Schema(
     phone: String,
     address: String,
     patients: [{ type: mongoose.Schema.Types.ObjectId, ref: "Patient" }],
+    about: String,
   },
   { timestamps: true }
 );
