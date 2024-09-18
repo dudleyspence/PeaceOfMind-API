@@ -16,7 +16,12 @@ exports.getPatientById = (req, res, next) => {
   }
 
   Patient.findById(patient_id)
-    .populate("carers")
+    .populate({
+      path: "carers",
+      populate: {
+        path: "user",
+      },
+    })
     .populate("guardians")
     .then((patient) => {
       if (!patient) {
