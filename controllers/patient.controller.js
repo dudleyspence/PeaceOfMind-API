@@ -16,6 +16,8 @@ exports.getPatientById = (req, res, next) => {
   }
 
   Patient.findById(patient_id)
+    .populate("carers")
+    .populate("guardians")
     .then((patient) => {
       if (!patient) {
         return res.status(404).send({ message: "Patient not found" });
