@@ -273,7 +273,7 @@ describe("app", () => {
                     /^(Hygiene|Meals|Medical|Additional|Exercise)$/
                   ),
                   repeatInterval: expect.stringMatching(
-                    /^(daily|weekly|biweekly|monthly|none)$/
+                    /^(Daily|Weekly|Biweekly|Monthly|None)$/
                   ),
                   patient: expect.any(String),
                   carer: expect.any(String),

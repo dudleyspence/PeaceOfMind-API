@@ -13,8 +13,8 @@ const TaskTemplateSchema = mongoose.Schema(
     },
     repeatInterval: {
       type: String,
-      enum: ["daily", "weekly", "biweekly", "monthly", "none"],
-      default: "none",
+      enum: ["Daily", "Weekly", "Biweekly", "Monthly", "None"],
+      default: "None",
     },
     repeatEndDate: { type: Date },
     patient: {

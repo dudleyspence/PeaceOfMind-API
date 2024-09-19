@@ -4,7 +4,7 @@
     "text": "Morning hygiene routine",
     "isDaySpecific": false,
     "category": "Hygiene",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -13,7 +13,7 @@
     "text": "Breakfast",
     "isDaySpecific": false,
     "category": "Meals",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -22,7 +22,7 @@
     "text": "Take morning medication",
     "isDaySpecific": false,
     "category": "Medical",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -31,7 +31,7 @@
     "text": "Lunch",
     "isDaySpecific": false,
     "category": "Meals",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -40,7 +40,7 @@
     "text": "Afternoon walk",
     "isDaySpecific": false,
     "category": "Exercise",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -49,7 +49,7 @@
     "text": "Dinner",
     "isDaySpecific": false,
     "category": "Meals",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -58,7 +58,7 @@
     "text": "Evening medication",
     "isDaySpecific": false,
     "category": "Medical",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -67,7 +67,7 @@
     "text": "Bedtime preparation",
     "isDaySpecific": false,
     "category": "Hygiene",
-    "repeatInterval": "daily",
+    "repeatInterval": "Daily",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -76,7 +76,7 @@
     "text": "Weekly check-up at clinic",
     "isDaySpecific": true,
     "category": "Medical",
-    "repeatInterval": "weekly",
+    "repeatInterval": "Weekly",
     "repeatEndDate": "2024-12-31T00:00:00Z",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
@@ -86,7 +86,7 @@
     "text": "Family visit",
     "isDaySpecific": true,
     "category": "Additional",
-    "repeatInterval": "weekly",
+    "repeatInterval": "Weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -95,7 +95,7 @@
     "text": "Gardening",
     "isDaySpecific": false,
     "category": "Additional",
-    "repeatInterval": "weekly",
+    "repeatInterval": "Weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -104,7 +104,7 @@
     "text": "Music therapy session",
     "isDaySpecific": false,
     "category": "Additional",
-    "repeatInterval": "weekly",
+    "repeatInterval": "Weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -113,7 +113,7 @@
     "text": "Memory games",
     "isDaySpecific": false,
     "category": "Additional",
-    "repeatInterval": "biweekly",
+    "repeatInterval": "Biweekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -122,7 +122,7 @@
     "text": "Pet therapy session",
     "isDaySpecific": false,
     "category": "Additional",
-    "repeatInterval": "monthly",
+    "repeatInterval": "Monthly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -131,7 +131,7 @@
     "text": "Attend spiritual service",
     "isDaySpecific": true,
     "category": "Additional",
-    "repeatInterval": "weekly",
+    "repeatInterval": "Weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   }
