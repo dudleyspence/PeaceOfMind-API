@@ -20,6 +20,7 @@ app.get("/api", function (req, res) {
 
 for (router in routers) {
   app.use("/api", routers[router]);
+  console.log(router);
 }
 
 //auto generate openAPI docs

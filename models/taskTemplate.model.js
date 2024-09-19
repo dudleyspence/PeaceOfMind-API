@@ -31,7 +31,7 @@ const TaskTemplateSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const TaskTemplate = mongoose.model("TaskTemplate", TaskTemplateSchema);
+const TaskTemplate = mongoose.model("Task_template", TaskTemplateSchema);
 module.exports = TaskTemplate;
 
 // This is the template for each task and it defines the structure of the task and its recurrence behavior it doenst include any information about an instance of the task such as completion etc.

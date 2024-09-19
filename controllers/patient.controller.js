@@ -120,9 +120,12 @@ exports.getPatientTaskTemplates = (req, res, next) => {
       if (!patient) {
         return res.status(404).send({ message: "Patient not found" });
       }
+
       return TaskTemplate.find({ patient: patient_id });
     })
+
     .then((TaskTemplate) => {
+      console.log(TaskTemplate);
       if (TaskTemplate.length === 0) {
         return res.status(200).send([]);
       } else {
