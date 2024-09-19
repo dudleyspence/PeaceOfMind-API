@@ -485,4 +485,25 @@ describe("app", () => {
       });
     });
   });
+
+  describe("Tasks", () => {
+    describe("/api/tasks/templates/:tasktemplate_id", () => {
+      describe("PATCH", () => {
+        test("200: returns the correctly updated task template", () => {
+          const update = { text: "lunch" };
+          return request(app)
+            .patch("/api/tasks/templates/66e31b0dcdd5353bc16957c7")
+            .send(update)
+            .expect(200)
+            .then(({ body }) => {
+              console.log(body);
+              expect(body).toMatchObject({
+                _id: "66e31b0dcdd5353bc16957c7",
+                text: "lunch",
+              });
+            });
+        });
+      });
+    });
+  });
 });
