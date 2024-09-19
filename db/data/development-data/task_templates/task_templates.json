@@ -85,7 +85,7 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957cf" },
     "text": "Family visit",
     "isDaySpecific": true,
-    "category": "Social",
+    "category": "Additional",
     "repeatInterval": "weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
@@ -94,7 +94,7 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957d0" },
     "text": "Gardening",
     "isDaySpecific": false,
-    "category": "Hobby",
+    "category": "Additional",
     "repeatInterval": "weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
@@ -103,7 +103,7 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957d1" },
     "text": "Music therapy session",
     "isDaySpecific": false,
-    "category": "Therapy",
+    "category": "Additional",
     "repeatInterval": "weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
@@ -112,7 +112,7 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957d2" },
     "text": "Memory games",
     "isDaySpecific": false,
-    "category": "Cognitive",
+    "category": "Additional",
     "repeatInterval": "biweekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
@@ -121,7 +121,7 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957d3" },
     "text": "Pet therapy session",
     "isDaySpecific": false,
-    "category": "Therapy",
+    "category": "Additional",
     "repeatInterval": "monthly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
@@ -130,7 +130,7 @@
     "_id": { "$oid": "66e31b0dcdd5353bc16957d4" },
     "text": "Attend spiritual service",
     "isDaySpecific": true,
-    "category": "Spiritual",
+    "category": "Additional",
     "repeatInterval": "weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }

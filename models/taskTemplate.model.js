@@ -6,14 +6,14 @@ const TaskTemplateSchema = mongoose.Schema(
     isDaySpecific: { type: Boolean, default: false },
     category: {
       type: String,
-      enum: ["Hygiene", "Meals", "Medical", "Additional"],
+      enum: ["Hygiene", "Meals", "Medical", "Additional", "Exercise"],
       required: function () {
         return !this.isDaySpecific;
       },
     },
     repeatInterval: {
       type: String,
-      enum: ["daily", "weekly", "none"],
+      enum: ["daily", "weekly", "biweekly", "monthly", "none"],
       default: "none",
     },
     repeatEndDate: { type: Date },

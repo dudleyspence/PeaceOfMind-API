@@ -125,7 +125,6 @@ exports.getPatientTaskTemplates = (req, res, next) => {
     })
 
     .then((TaskTemplate) => {
-      console.log(TaskTemplate);
       if (TaskTemplate.length === 0) {
         return res.status(200).send([]);
       } else {

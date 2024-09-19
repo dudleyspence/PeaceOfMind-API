@@ -270,12 +270,11 @@ describe("app", () => {
                   text: expect.any(String),
                   isDaySpecific: expect.any(Boolean),
                   category: expect.stringMatching(
-                    /^(Hygiene|Meals|Medical|Additional)$/
+                    /^(Hygiene|Meals|Medical|Additional|Exercise)$/
                   ),
                   repeatInterval: expect.stringMatching(
-                    /^(daily|weekly|none)$/
+                    /^(daily|weekly|biweekly|monthly|none)$/
                   ),
-                  repeatEndDate: expect.anything(),
                   patient: expect.any(String),
                   carer: expect.any(String),
                 });
