@@ -9,6 +9,7 @@ const {
   getPatientTaskInstances,
   addNewPatient,
   updatePatientInfo,
+  getTasksForSpecificDay,
 } = require("../controllers/patient.controller");
 
 router.get("/patients/:patient_id", getPatientById);
@@ -19,5 +20,6 @@ router.get("/patients/:patient_id/task-templates", getPatientTaskTemplates);
 router.get("/patients/:patient_id/task-instances", getPatientTaskInstances);
 router.post("/patients", addNewPatient);
 router.patch("/patients/:patient_id", updatePatientInfo);
+router.get("patients/:patient_id/tasks/:isoDate", getTasksForSpecificDay);
 
 module.exports = router;
