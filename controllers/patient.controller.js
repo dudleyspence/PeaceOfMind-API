@@ -216,17 +216,17 @@ exports.getTasksForSpecificDay = (req, res, next) => {
   }
 
   const date = new Date(isoDate);
-  const startOfDay = new Date(date.setHours(0, 0, 0, 0)); // gets 00:00:00 on the given day
+
+  const startOfDay = new Date(date.setUTCHours(0, 0, 0, 0));
   console.log(startOfDay, "<<< Start");
 
-  const endOfDay = new Date(date.setHours(23, 59, 59, 999)); // gets 23:59:59 on the given day
+  const endOfDay = new Date(date.setUTCHours(23, 59, 59, 999));
   console.log(endOfDay, "<<< End");
 
   TaskInstance.find({
     patient: patient_id,
     scheduleDate: { $gte: startOfDay, $lt: endOfDay },
-  }) //$gte means greater than or equal to
-    // $lt means less than
+  })
     .then((tasks) => {
       res.status(200).send(tasks);
     })
