@@ -209,7 +209,6 @@ exports.updatePatientInfo = (req, res, next) => {
 
 exports.getTasksForSpecificDay = (req, res, next) => {
   const { patient_id, isoDate } = req.params;
-  console.log(isoDate, "<<< Date");
 
   if (!mongoose.Types.ObjectId.isValid(patient_id)) {
     return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
@@ -250,6 +249,7 @@ exports.getTasksForSpecificDay = (req, res, next) => {
       $lt: endOfDayISO,
     },
   })
+    .populate(template)
     .then((tasks) => {
       res.status(200).send(tasks);
     })
