@@ -7,7 +7,8 @@ const data = JSON.parse(
     "utf8"
   )
 );
+let count = 0;
 data.forEach((document) => {
-  document._id = { $oid: new mongoose.Types.ObjectId().toString() };
+  count++;
 });
-fs.writeFileSync("modified_data.json", JSON.stringify(data, null, 2));
+console.log(count);
