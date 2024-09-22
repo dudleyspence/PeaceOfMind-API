@@ -20,6 +20,6 @@ router.get("/patients/:patient_id/task-templates", getPatientTaskTemplates);
 router.get("/patients/:patient_id/task-instances", getPatientTaskInstances);
 router.post("/patients", addNewPatient);
 router.patch("/patients/:patient_id", updatePatientInfo);
-router.get("patients/:patient_id/tasks/:isoDate", getTasksForSpecificDay);
+router.get("/patients/:patient_id/tasks/:isoDate", getTasksForSpecificDay);
 
 module.exports = router;
