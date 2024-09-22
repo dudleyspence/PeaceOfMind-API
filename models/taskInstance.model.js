@@ -4,7 +4,7 @@ const TaskInstanceSchema = new mongoose.Schema(
   {
     template: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "task_template",
+      ref: "Task_template",
       required: true,
     },
     scheduleDate: { type: Date, required: true }, // for repeating tasks this will just be set to today each time a new instance is created.
