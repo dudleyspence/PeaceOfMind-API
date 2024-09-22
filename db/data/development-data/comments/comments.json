@@ -1,121 +1,18 @@
 [
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "text": "Patient was very cooperative today.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c3" },
-    "text": "Patient skipped breakfast today.",
+    "text": "Patricia skipped breakfast today.",
     "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
     "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "createdAt": { "$date": "2024-09-21T09:00:00Z" }
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c4" },
-    "text": "Patient had a good morning walk, seemed happy.",
+    "text": "We had a good morning walk, she seemed happy.",
     "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
     "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "text": "Patient is showing signs of improvement.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c6" },
-    "text": "Patient refused to take medication today.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c7" },
-    "text": "Patient's family visited, boosted his mood significantly.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c8" },
-    "text": "Patient was restless and agitated during the night.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c9" },
-    "text": "Patient enjoyed the music therapy session today.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957ca" },
-    "text": "Patient expressed happiness after the family visit.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cb" },
-    "text": "Patient attended spiritual service; felt very peaceful.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cc" },
-    "text": "Patient did not want to eat lunch today.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cd" },
-    "text": "Patient took part in cognitive games, appeared more focused.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957ce" },
-    "text": "Patient had a restful sleep after bedtime prep.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cf" },
-    "text": "Patient was calm during pet therapy session.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "authorType": "Carer",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d0" },
-    "text": "Guardian noted that the patient seemed more relaxed after a family visit.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c3" },
-    "authorType": "Guardian",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d1" },
-    "text": "Guardian observed that the patient was less agitated today.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c3" },
-    "authorType": "Guardian",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d2" },
-    "text": "Guardian mentioned that the patient enjoyed the new activity.",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c3" },
-    "authorType": "Guardian",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "createdAt": { "$date": "2024-09-21T11:00:00Z" }
   }
 ]
