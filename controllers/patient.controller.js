@@ -217,7 +217,10 @@ exports.getTasksForSpecificDay = (req, res, next) => {
 
   TaskInstance.find({
     patient: patient_id,
-    scheduleDate: { $eq: new Date(isoDate) },
+    scheduleDate: {
+      $gte: new Date(startOfDay).toISOString(),
+      $lt: new Date(endOfDay).toISOString(),
+    },
   })
     .then((tasks) => {
       res.status(200).send(tasks);
