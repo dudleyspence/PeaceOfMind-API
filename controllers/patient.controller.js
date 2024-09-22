@@ -249,7 +249,7 @@ exports.getTasksForSpecificDay = (req, res, next) => {
       $lt: endOfDayISO,
     },
   })
-    .populate("task_template")
+    .populate("template")
     .then((tasks) => {
       res.status(200).send(tasks);
     })
