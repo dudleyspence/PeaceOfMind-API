@@ -215,17 +215,9 @@ exports.getTasksForSpecificDay = (req, res, next) => {
     return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
   }
 
-  const date = new Date(isoDate);
-
-  const startOfDay = new Date(date.setUTCHours(0, 0, 0, 0));
-  console.log(startOfDay, "<<< Start");
-
-  const endOfDay = new Date(date.setUTCHours(23, 59, 59, 999));
-  console.log(endOfDay, "<<< End");
-
   TaskInstance.find({
     patient: patient_id,
-    scheduleDate: { $gte: startOfDay, $lt: endOfDay },
+    scheduleDate: { $eq: new Date(isoDate) },
   })
     .then((tasks) => {
       res.status(200).send(tasks);
