@@ -255,3 +255,52 @@ exports.getTasksForSpecificDay = (req, res, next) => {
     })
     .catch(next);
 };
+
+exports.getCommentsForSpecificDay = (req, res, next) => {
+  const { patient_id, isoDate } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
+    return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
+  }
+
+  let date = new Date(isoDate);
+
+  let startOfDay = new Date(
+    Date.UTC(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      0,
+      0,
+      0,
+      0
+    )
+  );
+  let startOfDayISO = startOfDay.toISOString();
+
+  let endOfDay = new Date(
+    Date.UTC(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      23,
+      59,
+      59,
+      999
+    )
+  );
+  let endOfDayISO = endOfDay.toISOString();
+
+  Comment.find({
+    patient: patient_id,
+    createdAt: {
+      $gte: startOfDayISO,
+      $lt: endOfDayISO,
+    },
+  })
+    .populate("User")
+    .then((tasks) => {
+      res.status(200).send(tasks);
+    })
+    .catch(next);
+};
