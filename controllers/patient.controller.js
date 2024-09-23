@@ -298,7 +298,7 @@ exports.getCommentsForSpecificDay = (req, res, next) => {
       $lt: endOfDayISO,
     },
   })
-    .populate("User")
+    .populate(author)
     .then((tasks) => {
       res.status(200).send(tasks);
     })
