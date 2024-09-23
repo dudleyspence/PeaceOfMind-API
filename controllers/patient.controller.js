@@ -298,10 +298,11 @@ exports.getCommentsForSpecificDay = (req, res, next) => {
       $lt: endOfDayISO,
     },
   })
+    .populate("author")
     .populate({
       path: "author",
       populate: {
-        path: "User",
+        path: "user",
       },
     })
     .then((tasks) => {
