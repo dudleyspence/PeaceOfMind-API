@@ -27,8 +27,8 @@ function seedData() {
       relaxed: false,
     },
     transformers: [
+      Seeder.Transformers.setCreatedAtTimestamp,
       Seeder.Transformers.replaceDocumentIdWithUnderscoreId,
-      Seeder.Transformers.setTimestamps,
     ],
   };
 

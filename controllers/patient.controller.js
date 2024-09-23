@@ -293,7 +293,7 @@ exports.getCommentsForSpecificDay = (req, res, next) => {
 
   Comment.find({
     patient: patient_id,
-    createdAt: {
+    dateOfComment: {
       $gte: startOfDayISO,
       $lt: endOfDayISO,
     },

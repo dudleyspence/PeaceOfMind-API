@@ -14,7 +14,12 @@ const CommentSchema = new mongoose.Schema(
       ref: "Patient",
       required: true,
     },
+    dateOfComment: {
+      type: Date,
+      required: true,
+    },
   },
+
   { timestamps: true }
 );
 
