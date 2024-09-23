@@ -496,7 +496,6 @@ describe("app", () => {
             .send(update)
             .expect(200)
             .then(({ body }) => {
-              console.log(body);
               expect(body).toMatchObject({
                 _id: "66e31b0dcdd5353bc16957c7",
                 text: "lunch",

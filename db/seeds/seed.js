@@ -11,7 +11,6 @@ if (ENV === "test") {
 }
 
 function seedData() {
-  console.log("hello");
   const seeder = new Seeder({
     database: MONGO_URI,
     dropDatabase: true,
