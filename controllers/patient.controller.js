@@ -301,7 +301,7 @@ exports.getCommentsForSpecificDay = (req, res, next) => {
     .populate({
       path: "author",
       populate: {
-        path: "user",
+        path: "User",
       },
     })
     .then((tasks) => {
