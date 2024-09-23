@@ -73,18 +73,15 @@
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957ce" },
-    "text": "Weekly check-up at clinic",
+    "text": "Dentist Appointment",
     "isDaySpecific": true,
-    "category": "Medical",
-    "repeatInterval": "Weekly",
-    "repeatEndDate": "2024-12-31T00:00:00Z",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957cf" },
     "text": "Family visit",
-    "isDaySpecific": true,
+    "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
@@ -129,7 +126,7 @@
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957d4" },
     "text": "Attend spiritual service",
-    "isDaySpecific": true,
+    "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Weekly",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
