@@ -12,6 +12,13 @@ exports.addNewComment = (req, res, next) => {
   const newComment = new Comment(req.body);
   newComment
     .save()
+    .populate("author")
+    .populate({
+      path: "author",
+      populate: {
+        path: "user",
+      },
+    })
     .then((comment) => {
       return res.status(201).send(comment);
     })
