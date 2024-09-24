@@ -26,3 +26,26 @@ exports.updateTaskTemplate = (req, res, next) => {
     })
     .catch(next);
 };
+
+exports.postTask = (req, res, next) => {
+  const task = req.body;
+
+  const taskTemplate = task.taskTemplate;
+  const newTaskTemplate = new TaskTemplate(taskTemplate);
+
+  newTaskTemplate.save().then((template) => {
+    const templateID = template._id;
+    if (template.isDaySpecific) {
+      const taskInstance = task.taskInstance;
+      taskInstance.template = ObjectId(templateID);
+
+      const newTaskInstance = new TaskInstance(taskInstance);
+
+      newTaskInstance.save().then((instance) => {
+        return res.status(201).send(instance.populate("template"));
+      });
+    } else {
+      return res.status(201).send(template);
+    }
+  });
+};
