@@ -37,7 +37,7 @@ exports.postTask = (req, res, next) => {
     const templateID = template._id;
     if (template.isDaySpecific) {
       const taskInstance = task.taskInstance;
-      taskInstance.template = ObjectId(templateID);
+      taskInstance.template = templateID;
 
       const newTaskInstance = new TaskInstance(taskInstance);
 
