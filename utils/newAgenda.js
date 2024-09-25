@@ -53,6 +53,7 @@ function initializeAgenda() {
         $gte: todayStart,
         $lt: todayEnd,
       },
+      isDaySpecific: false,
     });
     for (const template of templates) {
       const newTaskInstance = new TaskInstance({
