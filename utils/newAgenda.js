@@ -1,5 +1,5 @@
-import dotenv from "dotenv";
-import Agenda from "agenda";
+const dotenv = require("dotenv");
+const Agenda = require("agenda");
 
 const ENV = process.env.NODE_ENV || "development";
 
