@@ -1,135 +1,168 @@
 [
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c6" },
+    "_id": "66e31b0dcdd5353bc16957c6",
     "text": "Morning hygiene routine",
     "isDaySpecific": false,
     "category": "Hygiene",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c7" },
+    "_id": "66e31b0dcdd5353bc16957c7",
     "text": "Breakfast",
     "isDaySpecific": false,
     "category": "Meals",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c8" },
+    "_id": "66e31b0dcdd5353bc16957c8",
     "text": "Take morning medication",
     "isDaySpecific": false,
     "category": "Medical",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957c9" },
+    "_id": "66e31b0dcdd5353bc16957c9",
     "text": "Lunch",
     "isDaySpecific": false,
     "category": "Meals",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957ca" },
+    "_id": "66e31b0dcdd5353bc16957ca",
     "text": "Afternoon walk",
     "isDaySpecific": false,
     "category": "Exercise",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cb" },
+    "_id": "66e31b0dcdd5353bc16957cb",
     "text": "Dinner",
     "isDaySpecific": false,
     "category": "Meals",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cc" },
+    "_id": "66e31b0dcdd5353bc16957cc",
     "text": "Evening medication",
     "isDaySpecific": false,
     "category": "Medical",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cd" },
+    "_id": "66e31b0dcdd5353bc16957cd",
     "text": "Bedtime preparation",
     "isDaySpecific": false,
     "category": "Hygiene",
     "repeatInterval": "Daily",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957ce" },
+    "_id": "66e31b0dcdd5353bc16957ce",
     "text": "Dentist Appointment",
     "isDaySpecific": true,
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "category": null,
+    "repeatInterval": "None",
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-09-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957cf" },
+    "_id": "66e31b0dcdd5353bc16957cf",
     "text": "Family visit",
     "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Weekly",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-10-02T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2",
+    "repeatEndDate": "2024-10-25T00:00:00Z"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d0" },
+    "_id": "66e31b0dcdd5353bc16957d0",
     "text": "Gardening",
     "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Weekly",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-10-02T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d1" },
+    "_id": "66e31b0dcdd5353bc16957d1",
     "text": "Music therapy session",
     "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Weekly",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-10-02T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d2" },
+    "_id": "66e31b0dcdd5353bc16957d2",
     "text": "Memory games",
     "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Biweekly",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-10-09T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d3" },
+    "_id": "66e31b0dcdd5353bc16957d3",
     "text": "Pet therapy session",
     "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Monthly",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-10-25T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   },
   {
-    "_id": { "$oid": "66e31b0dcdd5353bc16957d4" },
+    "_id": "66e31b0dcdd5353bc16957d4",
     "text": "Attend spiritual service",
     "isDaySpecific": false,
     "category": "Additional",
     "repeatInterval": "Weekly",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+    "startDate": "2024-09-25T00:00:00Z",
+    "nextInstanceDate": "2024-10-02T00:00:00Z",
+    "patient": "66e31b0dcdd5353bc16957c5",
+    "carer": "66e31b0dcdd5353bc16957c2"
   }
 ]

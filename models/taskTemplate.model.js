@@ -17,6 +17,8 @@ const TaskTemplateSchema = mongoose.Schema(
       default: "None",
     },
     repeatEndDate: { type: Date },
+    startDate: { type: Date },
+    nextInstanceDate: { type: Date, required: true },
     patient: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Patient",
