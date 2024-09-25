@@ -1,15 +1,13 @@
-const dotenv = require("dotenv");
 const Agenda = require("agenda");
+const { TaskTemplate, TaskInstance } = require("../models/index.model");
 
-const ENV = process.env.NODE_ENV || "development";
+const { MONGO_URI } = require("../config/loadEnvironment");
 
-if (ENV !== "production") {
-  dotenv.config({ path: `.env.${ENV}` });
-}
-
-const mongoConnectionString = process.env.MONGO_URI || process.env.DATABASE_URL;
-
-const agenda = new Agenda({ db: { address: mongoConnectionString } });
+const agenda = new Agenda({
+  db: { address: MONGO_URI, collection: "agendaJobs" },
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 agenda.define("welcomeMessage", () => {
   console.log("Sending a welcome message every few seconds");
