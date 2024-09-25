@@ -3,16 +3,11 @@ const swaggerDocument = require("./docs/swagger-output.json");
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const agenda = require("./utils/newAgenda");
 app.use(cors());
 
 const routers = require("./routes/index.routes");
 
 app.use(express.json());
-
-agenda.start().then(function () {
-  console.log("Agenda started. Ready to process jobs.");
-});
 
 const {
   handleServerError,
