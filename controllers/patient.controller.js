@@ -93,6 +93,13 @@ exports.getPatientComments = (req, res, next) => {
   }
 
   Patient.findById(patient_id)
+    .populate("author")
+    .populate({
+      path: "author",
+      populate: {
+        path: "user",
+      },
+    })
     .then((patient) => {
       if (!patient) {
         return res.status(404).send({ message: "Patient not found" });

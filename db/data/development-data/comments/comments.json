@@ -5,7 +5,6 @@
     "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
     "authorType": "Carer",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "dateOfComment": { "$date": "2024-09-21T09:00:00Z" }
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c4" },
@@ -13,7 +12,6 @@
     "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
     "authorType": "Carer",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "dateOfComment": { "$date": "2024-09-21T11:00:00Z" }
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16956c5" },
@@ -21,6 +19,5 @@
     "author": { "$oid": "66e31b0dcdd5353bc16957c3" },
     "authorType": "Guardian",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
-    "dateOfComment": { "$date": "2024-09-21T11:30:00Z" }
   }
 ]
