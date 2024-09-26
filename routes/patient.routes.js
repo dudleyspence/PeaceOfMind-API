@@ -29,7 +29,7 @@ router.get(
 );
 
 router.get(
-  "/patients/:patient_id/tasks/day-specific",
+  "/patients/:patient_id/scheduled-tasks",
   getScheduledDaySpecificTasks
 );
 
