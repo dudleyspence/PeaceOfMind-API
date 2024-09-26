@@ -317,3 +317,24 @@ exports.getCommentsForSpecificDay = (req, res, next) => {
     })
     .catch(next);
 };
+
+exports.getScheduledDaySpecificTasks = (req, res, next) => {
+  const { patient_id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
+    return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
+  }
+
+  const today = new Date();
+  today.setUTCHours(0, 0, 0, 0);
+
+  TaskInstance.find({
+    patient: patient_id,
+    scheduleDate: { $gte: today },
+  })
+    .populate("template")
+    .then((instances) => {
+      res.status(200).send(instances);
+    })
+    .catch(next);
+};

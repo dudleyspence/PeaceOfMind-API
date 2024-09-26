@@ -11,6 +11,7 @@ const {
   updatePatientInfo,
   getTasksForSpecificDay,
   getCommentsForSpecificDay,
+  getScheduledDaySpecificTasks,
 } = require("../controllers/patient.controller");
 
 router.get("/patients/:patient_id", getPatientById);
@@ -25,6 +26,11 @@ router.get("/patients/:patient_id/tasks/:isoDate", getTasksForSpecificDay);
 router.get(
   "/patients/:patient_id/:isoDate/comments",
   getCommentsForSpecificDay
+);
+
+router.get(
+  "/patients/:patient_id/tasks/day-specific",
+  getScheduledDaySpecificTasks
 );
 
 module.exports = router;
