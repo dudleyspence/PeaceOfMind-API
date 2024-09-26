@@ -330,9 +330,9 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
 
   TaskInstance.find({
     patient: patient_id,
-    scheduleDate: { $gte: today },
   })
     .populate("template")
+    .find({ scheduleDate: { $gte: today } })
     .then((instances) => {
       res.status(200).send(instances);
     })
