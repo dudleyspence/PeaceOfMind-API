@@ -31,9 +31,7 @@ exports.updateScheduleTask = (req, res, next) => {
   const { tasktemplate_id, taskinstance_id } = req.params;
   console.log(tasktemplate_id, taskinstance_id);
 
-  const {
-    update: { templateUpdate, instanceUpdate },
-  } = req.body;
+  const { templateUpdate, instanceUpdate } = req.body;
 
   console.log(templateUpdate);
   console.log(instanceUpdate);
