@@ -48,6 +48,7 @@ exports.updateScheduleTask = (req, res, next) => {
     runValidators: true,
   })
     .then((updatedTemplate) => {
+      console.log(updatedTemplate);
       if (!updatedTemplate) {
         return res.status(404).send({ message: "Task Template not found" });
       }
