@@ -326,11 +326,10 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
   }
 
   const today = new Date();
-  today.setUTCHours(0, 0, 0, 0);
 
   TaskInstance.find({
     patient: patient_id,
-    nextInstanceDate: { $gte: today },
+    scheduleDate: { $gte: today },
   })
     .populate("template")
     .then((instances) => {
