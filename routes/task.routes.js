@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
   updateTaskTemplate,
-  updateScheduleTask,
+  updateTaskInstance,
   postTask,
 } = require("../controllers/task.controller");
 
