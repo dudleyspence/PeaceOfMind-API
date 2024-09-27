@@ -54,7 +54,7 @@ exports.updateScheduleTask = (req, res, next) => {
       return TaskInstance.findByIdAndUpdate(taskinstance_id, instanceUpdate, {
         new: true,
         runValidators: true,
-      }).populate("template");
+      });
     })
     .then((updatedInstance) => {
       if (!updatedInstance) {
