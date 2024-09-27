@@ -29,9 +29,10 @@ exports.updateTaskTemplate = (req, res, next) => {
 
 exports.updateScheduleTask = (req, res, next) => {
   const { update } = req.params;
-  const { tasktemplate_id, taskinstance_id } = update;
-  console.log(tasktemplate_id, taskinstance_id);
   console.log(update);
+
+  const { tasktemplate_id, taskinstance_id } = update;
+
   const { templateUpdate, instanceUpdate } = req.body;
 
   if (
