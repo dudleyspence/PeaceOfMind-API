@@ -33,16 +33,15 @@ exports.updateTaskInstance = (req, res, next) => {
 
   const updates = req.body;
 
-  if (
-    !mongoose.Types.ObjectId.isValid(taskinstance_id) ||
-  ) {
+  if (!mongoose.Types.ObjectId.isValid(taskinstance_id)) {
     return res.status(400).send({ message: "Bad Request: Invalid IDs" });
   }
 
   TaskInstance.findByIdAndUpdate(taskinstance_id, updates, {
-        new: true,
-        runValidators: true})
-      .then((updatedInstance) => {
+    new: true,
+    runValidators: true,
+  })
+    .then((updatedInstance) => {
       if (!updatedInstance) {
         return res.status(404).send({ message: "Task Instance not found" });
       }
