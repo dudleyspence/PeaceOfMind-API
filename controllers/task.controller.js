@@ -28,7 +28,9 @@ exports.updateTaskTemplate = (req, res, next) => {
 };
 
 exports.updateScheduleTask = (req, res, next) => {
-  const { tasktemplate_id, taskinstance_id } = req.params;
+  const {
+    update: { tasktemplate_id, taskinstance_id },
+  } = req.params;
   const { templateUpdate, instanceUpdate } = req.body;
 
   if (
