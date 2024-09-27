@@ -28,12 +28,15 @@ exports.updateTaskTemplate = (req, res, next) => {
 };
 
 exports.updateScheduleTask = (req, res, next) => {
-  const { update } = req.params;
-  console.log(update);
+  const { tasktemplate_id, taskinstance_id } = req.params;
+  console.log(tasktemplate_id, taskinstance_id);
 
-  const { tasktemplate_id, taskinstance_id } = update;
+  const {
+    update: { templateUpdate, instanceUpdate },
+  } = req.body;
 
-  const { templateUpdate, instanceUpdate } = req.body;
+  console.log(templateUpdate);
+  console.log(instanceUpdate);
 
   if (
     !mongoose.Types.ObjectId.isValid(taskinstance_id) ||
