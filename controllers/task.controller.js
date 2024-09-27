@@ -27,37 +27,22 @@ exports.updateTaskTemplate = (req, res, next) => {
     .catch(next);
 };
 
-exports.updateScheduleTask = (req, res, next) => {
-  const { tasktemplate_id, taskinstance_id } = req.params;
-  console.log(tasktemplate_id, taskinstance_id);
+exports.updateTaskInstance = (req, res, next) => {
+  const { taskinstance_id } = req.params;
+  console.log(taskinstance_id);
 
-  const { templateUpdate, instanceUpdate } = req.body;
-
-  console.log(templateUpdate);
-  console.log(instanceUpdate);
+  const updates = req.body;
 
   if (
     !mongoose.Types.ObjectId.isValid(taskinstance_id) ||
-    !mongoose.Types.ObjectId.isValid(tasktemplate_id)
   ) {
     return res.status(400).send({ message: "Bad Request: Invalid IDs" });
   }
 
-  TaskTemplate.findByIdAndUpdate(tasktemplate_id, templateUpdate, {
-    new: true,
-    runValidators: true,
-  })
-    .then((updatedTemplate) => {
-      console.log(updatedTemplate);
-      if (!updatedTemplate) {
-        return res.status(404).send({ message: "Task Template not found" });
-      }
-      return TaskInstance.findByIdAndUpdate(taskinstance_id, instanceUpdate, {
+  TaskInstance.findByIdAndUpdate(taskinstance_id, updates, {
         new: true,
-        runValidators: true,
-      });
-    })
-    .then((updatedInstance) => {
+        runValidators: true})
+      .then((updatedInstance) => {
       if (!updatedInstance) {
         return res.status(404).send({ message: "Task Instance not found" });
       }

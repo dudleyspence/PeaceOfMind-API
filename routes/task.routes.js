@@ -10,9 +10,6 @@ router.patch("/tasks/templates/:tasktemplate_id", updateTaskTemplate);
 
 router.post("/tasks", postTask);
 
-router.patch(
-  "/tasks/scheduled/:tasktemplate_id/:taskinstance_id",
-  updateScheduleTask
-);
+router.patch("/tasks/instances/:taskinstance_id", updateTaskInstance);
 
 module.exports = router;
