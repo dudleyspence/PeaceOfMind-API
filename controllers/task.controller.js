@@ -72,3 +72,29 @@ exports.postTask = (req, res, next) => {
     }
   });
 };
+
+exports.deleteTaskInstance = (req, res, next) => {
+  const { task_id } = req.params;
+
+  TaskInstance.findByIdAndDelete(task_id)
+    .then((deletedTask) => {
+      if (!deletedTask) {
+        return res.status(404).send({ message: "Task template not found" });
+      }
+      res.status(200).send({ message: "Task deleted successfully" });
+    })
+    .catch(next);
+};
+
+exports.deleteTaskTemplate = (req, res, next) => {
+  const { task_id } = req.params;
+
+  TaskInstance.findByIdAndDelete(task_id)
+    .then((deletedTask) => {
+      if (!deletedTask) {
+        return res.status(404).send({ message: "Task instance not found" });
+      }
+      res.status(200).send({ message: "Task deleted successfully" });
+    })
+    .catch(next);
+};
