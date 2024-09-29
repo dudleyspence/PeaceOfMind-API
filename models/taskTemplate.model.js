@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const TaskTemplateSchema = mongoose.Schema(
   {
     text: { type: String, required: true },
+    notes: { type: String },
     isDaySpecific: { type: Boolean, default: false },
     category: {
       type: String,
