@@ -74,9 +74,9 @@ exports.postTask = (req, res, next) => {
 };
 
 exports.deleteTaskInstance = (req, res, next) => {
-  const { task_id } = req.params;
+  const { instance_id } = req.params;
 
-  TaskInstance.findByIdAndDelete(task_id)
+  TaskInstance.findByIdAndDelete(instance_id)
     .then((deletedTask) => {
       if (!deletedTask) {
         return res.status(404).send({ message: "Task template not found" });
@@ -87,9 +87,9 @@ exports.deleteTaskInstance = (req, res, next) => {
 };
 
 exports.deleteTaskTemplate = (req, res, next) => {
-  const { task_id } = req.params;
+  const { template_id } = req.params;
 
-  TaskInstance.findByIdAndDelete(task_id)
+  TaskInstance.findByIdAndDelete(template_id)
     .then((deletedTask) => {
       if (!deletedTask) {
         return res.status(404).send({ message: "Task instance not found" });
