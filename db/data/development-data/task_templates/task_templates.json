@@ -129,8 +129,8 @@
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957d1" },
-    "text": "Prepare the medication tray for the week",
-    "notes": "The tubs to refill the trey are in the cupboard next to the fridge and there is a medication plan showinf the quantities for each medication",
+    "text": "Prepare medication for the week",
+    "notes": "The tubs to refill the trey are in the cupboard next to the fridge and there is a medication plan showing the quantities for each medication",
     "isDaySpecific": false,
     "category": "Medical",
     "repeatInterval": "Weekly",
