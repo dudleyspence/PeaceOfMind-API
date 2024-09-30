@@ -16,6 +16,11 @@ router.patch("/tasks/instances/:taskinstance_id", updateTaskInstance);
 
 router.delete("/tasks/instances/:instance_id", deleteTaskInstance);
 
-router.delete("/tasks/templates/:template_id", deleteTaskTemplate);
+router.delete("/deleteTemplate/:template_id", deleteTaskTemplate);
+
+router.use((req, res, next) => {
+  console.log(`No route found for ${req.method} ${req.url}`);
+  res.status(404).send({ message: "Route not found" });
+});
 
 module.exports = router;
