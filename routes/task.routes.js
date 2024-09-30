@@ -18,7 +18,7 @@ router.delete("/tasks/instances/:instance_id", deleteTaskInstance);
 
 router.delete("/tasks/templates/:template_id", deleteTaskTemplate);
 
-router.delete("/test/templates", (req, res) => {
+router.delete("/tasks/templates", (req, res) => {
   console.log("Test DELETE route hit");
   res.status(200).send({ message: "Test route success" });
 });
