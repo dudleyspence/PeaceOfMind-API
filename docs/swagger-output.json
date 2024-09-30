@@ -6,12 +6,14 @@
     "version": "1.0.0"
   },
   "host": "localhost:8000",
-  "basePath": "/api",
-  "schemes": ["http"],
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
   "paths": {
-    "": {
+    "/api": {
       "get": {
-        "description": "/api",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -72,6 +74,19 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/comments": {
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
@@ -251,6 +266,195 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/patients/{patient_id}/tasks/{isoDate}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "isoDate",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/patients/{patient_id}/{isoDate}/comments": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "isoDate",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/patients/{patient_id}/scheduled-tasks": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "patient_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/tasks/templates/{tasktemplate_id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "tasktemplate_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/tasks": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "req": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/tasks/instances/{taskinstance_id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "taskinstance_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/tasks/instances/{instance_id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "instance_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/tasks/templates/{template_id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "template_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "404": {
             "description": "Not Found"
