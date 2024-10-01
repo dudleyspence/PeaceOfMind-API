@@ -12,12 +12,5 @@
     "author": { "$oid": "66e31b0dcdd5353bc16957c2" },
     "authorType": "Carer",
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
-  },
-  {
-    "_id": { "$oid": "66e31b0dcdd5353bc16956c5" },
-    "text": "Great thank you!!",
-    "author": { "$oid": "66e31b0dcdd5353bc16957c3" },
-    "authorType": "Guardian",
-    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" }
   }
 ]
