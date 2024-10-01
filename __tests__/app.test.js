@@ -147,79 +147,6 @@ describe("app", () => {
       });
     });
 
-    describe("/api/patients/:patient_id/carers", () => {
-      describe("GET", () => {
-        test("200: returns patients carers when given patient id", () => {
-          return request(app)
-            .get("/api/patients/66e31b0dcdd5353bc16957c5/carers")
-            .expect(200)
-            .then(({ body }) => {
-              body.forEach((carer) => {
-                expect(carer).toMatchObject({
-                  _id: expect.any(String),
-                  user: expect.any(String),
-                  phone: expect.any(String),
-                  address: expect.any(String),
-                  patients: expect.any(Array),
-                });
-              });
-            });
-        });
-        test("400: Returns not found when given a patient_id that isnt valid", () => {
-          return request(app)
-            .get("/api/patients/notreal-id/carers")
-            .expect(400)
-            .then(({ body }) => {
-              expect(body.message).toBe("Bad Request");
-            });
-        });
-        test("404: Returns not found when given a patient_id that is valid but the patient doesnt exist", () => {
-          return request(app)
-            .get("/api/patients/66e31b0dcdd5353bc16958a3/carers")
-            .expect(404)
-            .then(({ body }) => {
-              expect(body.message).toBe("Patient not found");
-            });
-        });
-      });
-    });
-
-    describe("/api/patients/:patient_id/guardians", () => {
-      describe("GET", () => {
-        test("200: returns patients guardians when given patient id", () => {
-          return request(app)
-            .get("/api/patients/66e31b0dcdd5353bc16957c5/guardians")
-            .expect(200)
-            .then(({ body }) => {
-              body.forEach((guardian) => {
-                expect(guardian).toMatchObject({
-                  _id: expect.any(String),
-                  user: expect.any(String),
-                  phone: expect.any(String),
-                  patients: expect.any(Array),
-                });
-              });
-            });
-        });
-        test("400: Returns not found when given a patient_id that isnt valid", () => {
-          return request(app)
-            .get("/api/patients/notreal-id/guardians")
-            .expect(400)
-            .then(({ body }) => {
-              expect(body.message).toBe("Bad Request");
-            });
-        });
-        test("404: Returns not found when given a patient_id that is valid but the patient doesnt exist", () => {
-          return request(app)
-            .get("/api/patients/66e31b0dcdd5353bc16958a3/guardians")
-            .expect(404)
-            .then(({ body }) => {
-              expect(body.message).toBe("Patient not found");
-            });
-        });
-      });
-    });
-
     describe("/api/patients/:patient_id/comments", () => {
       describe("GET", () => {
         test("200: returns all comments for a patient when given patient id", () => {
@@ -231,7 +158,7 @@ describe("app", () => {
                 expect(comments).toMatchObject({
                   _id: expect.any(String),
                   text: expect.any(String),
-                  author: expect.any(String),
+                  author: expect.any(Object),
                   authorType: expect.any(String),
                   patient: expect.any(String),
                 });

@@ -36,56 +36,6 @@ exports.getPatientById = (req, res, next) => {
     .catch(next);
 };
 
-exports.getPatientCarers = (req, res, next) => {
-  const { patient_id } = req.params;
-  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
-    return res.status(400).send({ message: "Bad Request" });
-  }
-
-  Patient.findById(patient_id)
-    .then((patient) => {
-      if (!patient) {
-        return res.status(404).send({ message: "Patient not found" });
-      }
-
-      const carerIds = patient.carers;
-      if (carerIds.length === 0) {
-        return res.status(200).send([]);
-      }
-
-      return Carer.find({ _id: { $in: carerIds } });
-    })
-    .then((carers) => {
-      return res.status(200).send(carers);
-    })
-    .catch(next);
-};
-
-exports.getPatientGuardians = (req, res, next) => {
-  const { patient_id } = req.params;
-  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
-    return res.status(400).send({ message: "Bad Request" });
-  }
-
-  Patient.findById(patient_id)
-    .then((patient) => {
-      if (!patient) {
-        return res.status(404).send({ message: "Patient not found" });
-      }
-
-      const guardianIds = patient.guardians;
-      if (guardianIds.length === 0) {
-        return res.status(200).send([]);
-      }
-
-      return Guardian.find({ _id: { $in: guardianIds } });
-    })
-    .then((guardians) => {
-      return res.status(200).send(guardians);
-    })
-    .catch(next);
-};
-
 exports.getPatientComments = (req, res, next) => {
   const { patient_id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(patient_id)) {
@@ -202,8 +152,8 @@ exports.updatePatientInfo = (req, res, next) => {
   const updates = req.body;
 
   Patient.findByIdAndUpdate(patient_id, updates, {
-    new: true, // returns the new version
-    runValidators: true, // ensures conformaty to the schema
+    new: true,
+    runValidators: true,
   })
     .then((updatedPatient) => {
       if (!updatedPatient) {
@@ -257,61 +207,6 @@ exports.getTasksForSpecificDay = (req, res, next) => {
     },
   })
     .populate("template")
-    .then((tasks) => {
-      res.status(200).send(tasks);
-    })
-    .catch(next);
-};
-
-exports.getCommentsForSpecificDay = (req, res, next) => {
-  const { patient_id, isoDate } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
-    return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
-  }
-
-  let date = new Date(isoDate);
-
-  let startOfDay = new Date(
-    Date.UTC(
-      date.getUTCFullYear(),
-      date.getUTCMonth(),
-      date.getUTCDate(),
-      0,
-      0,
-      0,
-      0
-    )
-  );
-  let startOfDayISO = startOfDay.toISOString();
-
-  let endOfDay = new Date(
-    Date.UTC(
-      date.getUTCFullYear(),
-      date.getUTCMonth(),
-      date.getUTCDate(),
-      23,
-      59,
-      59,
-      999
-    )
-  );
-  let endOfDayISO = endOfDay.toISOString();
-
-  Comment.find({
-    patient: patient_id,
-    dateOfComment: {
-      $gte: startOfDayISO,
-      $lt: endOfDayISO,
-    },
-  })
-    .populate("author")
-    .populate({
-      path: "author",
-      populate: {
-        path: "user",
-      },
-    })
     .then((tasks) => {
       res.status(200).send(tasks);
     })
