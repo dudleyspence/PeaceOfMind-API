@@ -18,7 +18,7 @@ exports.addNewUser = (req, res, next) => {
       const userId = newUser._id;
 
       if (newUser.role === "guardian") {
-        const newGuardian = new Guardian({ user: userId });
+        const newGuardian = new Guardian({ user: newUser._id });
         newGuardian
           .save()
           .then((guardian) => {
