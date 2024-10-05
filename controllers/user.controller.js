@@ -19,13 +19,15 @@ exports.addNewUser = (req, res, next) => {
 
       if (newUser.role === "guardian") {
         const newGuardian = new Guardian({ user: userId });
-        newGuardian.save().then((guardian) => {
-          console.log(guardian);
-          console.log(guardian.populate("user"));
-          return res
-            .status(200)
-            .send(guardian.populate("user").execPopulate("user"));
-        });
+        newGuardian
+          .save()
+          .then((guardian) => {
+            return guardian.populate("user");
+          })
+          .then((populatedGuardian) => {
+            console.log("Guardian created:", populatedGuardian);
+            return res.status(200).send(populatedGuardian);
+          });
       } else if (newUser.role === "carer") {
         const newCarer = new Carer({ user: userId });
         newCarer.save().then((carer) => {
