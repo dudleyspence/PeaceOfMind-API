@@ -21,6 +21,7 @@ exports.addNewUser = (req, res, next) => {
         const newGuardian = new Guardian({ user: userId });
         newGuardian.save().then((guardian) => {
           console.log(guardian);
+          console.log(guardian.populate("user"));
           return res.status(200).send(guardian.populate("user"));
         });
       } else if (newUser.role === "carer") {
