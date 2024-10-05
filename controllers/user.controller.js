@@ -22,7 +22,9 @@ exports.addNewUser = (req, res, next) => {
         newGuardian.save().then((guardian) => {
           console.log(guardian);
           console.log(guardian.populate("user"));
-          return res.status(200).send(guardian.populate("user"));
+          return res
+            .status(200)
+            .send(guardian.populate("user").execPopulate("user"));
         });
       } else if (newUser.role === "carer") {
         const newCarer = new Carer({ user: userId });
