@@ -20,6 +20,7 @@ exports.addNewUser = (req, res, next) => {
       if (newUser.role === "guardian") {
         const newGuardian = new Guardian({ user: userId });
         newGuardian.save().then((guardian) => {
+          print(guardian);
           return res.status(200).send(guardian.populate("user"));
         });
       } else if (newUser.role === "carer") {
