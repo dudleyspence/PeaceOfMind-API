@@ -17,7 +17,7 @@ exports.addNewUser = (req, res, next) => {
     .then(() => {
       const userId = newUser._id;
 
-      if (newUser.type === "guardian") {
+      if (newUser.role === "guardian") {
         const newGuardian = new Guardian({ user: userId });
         newGuardian
           .save()
@@ -25,7 +25,7 @@ exports.addNewUser = (req, res, next) => {
           .then((guardianUser) => {
             return res.status(201).send(guardianUser);
           });
-      } else if (newUser.type === "carer") {
+      } else if (newUser.role === "carer") {
         const newCarer = new Carer({ user: userId });
         newCarer
           .save()
