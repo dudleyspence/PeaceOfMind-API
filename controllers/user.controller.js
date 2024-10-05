@@ -24,13 +24,9 @@ exports.addNewUser = (req, res, next) => {
           .then((guardian) => {
             return guardian.populate("user");
           })
-          .then((populatedGuardianWithUser) => {
-            console.log("Guardian created:", populatedGuardianWithUser);
-            return populatedGuardianWithUser.populate("patients");
-          })
-          .then((populatedGuardianWithPatients) => {
-            console.log("Guardian created:", populatedGuardianWithPatients);
-            return res.status(200).send(populatedGuardianWithPatients);
+          .then((populatedGuardian) => {
+            console.log("Guardian created:", populatedGuardian);
+            return res.status(200).send(populatedGuardian);
           });
       } else if (newUser.role === "carer") {
         const newCarer = new Carer({ user: userId });
@@ -39,13 +35,9 @@ exports.addNewUser = (req, res, next) => {
           .then((carer) => {
             return carer.populate("user");
           })
-          .then((populatedCarerWithUser) => {
-            return populatedCarerWithUser.populate("patients");
-          })
-          .then((populatedCarerWithPatients) => {
-            console.log("Carer created:", populatedCarerWithPatients);
-
-            return res.status(200).send(populatedCarerWithPatients);
+          .then((populatedCarer) => {
+            console.log("Carer created:", populatedCarer);
+            return res.status(200).send(populatedCarer);
           });
       } else {
         return res.status(400).send({ message: "Error creating accound type" });
