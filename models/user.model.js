@@ -4,7 +4,11 @@ const UserSchema = new mongoose.Schema(
   {
     _id: { type: String }, // Firebase UID stored as a string
     name: { type: String, required: true },
-    profileImageURL: String,
+    profileImageURL: {
+      type: String,
+      default:
+        "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
+    },
     email: { type: String, required: true, unique: true },
     role: { type: String, enum: ["guardian", "carer"], required: true },
   },
