@@ -240,7 +240,6 @@ describe("app", () => {
                   template: expect.any(String),
                   scheduleDate: expect.any(String),
                   isCompleted: expect.any(Boolean),
-                  completedAt: expect.any(String),
                   patient: expect.any(String),
                   carer: expect.any(String),
                 });

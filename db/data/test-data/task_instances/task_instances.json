@@ -1,0 +1,100 @@
+[
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14751" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957c6" },
+    "scheduleDate": { "$date": "2024-09-01T07:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T07:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14752" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957c7" },
+    "scheduleDate": { "$date": "2024-09-01T08:00:00Z" },
+    "isCompleted": false,
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14753" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957c8" },
+    "scheduleDate": { "$date": "2024-09-01T08:30:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T08:45:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14754" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957c9" },
+    "scheduleDate": { "$date": "2024-09-01T12:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T12:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14755" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957ca" },
+    "scheduleDate": { "$date": "2024-09-01T15:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T15:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14756" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957cb" },
+    "scheduleDate": { "$date": "2024-09-01T18:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T18:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14757" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957cc" },
+    "scheduleDate": { "$date": "2024-09-01T20:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T20:15:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14758" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957cd" },
+    "scheduleDate": { "$date": "2024-09-01T21:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T21:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c14759" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957ce" },
+    "scheduleDate": { "$date": "2024-09-01T10:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T10:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c1475a" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957cf" },
+    "scheduleDate": { "$date": "2024-09-01T14:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T14:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  },
+  {
+    "_id": { "$oid": "66f078bf60587f9269c1475b" },
+    "template": { "$oid": "66e31b0dcdd5353bc16957d0" },
+    "scheduleDate": { "$date": "2024-09-01T11:00:00Z" },
+    "isCompleted": true,
+    "completedAt": { "$date": "2024-09-01T11:30:00Z" },
+    "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
+    "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
+  }
+]
