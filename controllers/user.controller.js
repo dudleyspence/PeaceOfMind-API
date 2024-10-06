@@ -11,14 +11,17 @@ const mongoose = require("mongoose");
 
 exports.addNewUser = (req, res, next) => {
   const newUser = new User(req.body);
+  console.log(newUser);
 
   newUser
     .save()
     .then(() => {
       const userId = newUser._id;
+      console.log("UserID created:", userId);
 
       if (newUser.role === "guardian") {
         const newGuardian = new Guardian({ user: newUser._id });
+        console.log("Guardian created:", newGuardian);
         newGuardian
           .save()
           .then((guardian) => {
