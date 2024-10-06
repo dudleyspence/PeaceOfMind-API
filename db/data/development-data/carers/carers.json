@@ -1,7 +1,7 @@
 [
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c2" },
-    "user": "10",
+    "user": { "$oid": "670252732366c3c91be7fed5" },
     "phone": "123-456-7890",
     "address": "123 Main St, Anytown",
     "patients": [

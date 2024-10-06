@@ -1,23 +1,23 @@
 [
   {
-    "_id": "10",
-    "firebaseAuthId": "pok123",
+    "_id": { "$oid": "670252732366c3c91be7fed5" },
+    "firebaseUID": "pok123",
     "name": "John Doe",
     "profileImageURL": "https://media.istockphoto.com/id/1468678624/photo/nurse-hospital-employee-and-portrait-of-black-man-in-a-healthcare-wellness-and-clinic-feeling.jpg?s=612x612&w=0&k=20&c=AGQPyeEitUPVm3ud_h5_yVX4NKY9mVyXbFf50ZIEtQI=",
     "email": "john.doe@example.com",
     "role": "carer"
   },
   {
-    "_id": "11",
-    "firebaseAuthId": "pok124",
+    "_id": { "$oid": "670252732366c3c91be7fed4" },
+    "firebaseUID": "pok124",
     "name": "Jane Smith",
     "profileImageURL": "https://www.shutterstock.com/image-photo/adult-female-avatar-image-on-260nw-2420293027.jpg",
     "email": "jane.smith@example.com",
     "role": "guardian"
   },
   {
-    "_id": "12",
-    "firebaseAuthId": "pok113",
+    "_id": { "$oid": "670252732366c3c91be7fed3" },
+    "firebaseUID": "pok113",
     "name": "Ethan Johnson",
     "profileImageURL": "https://t4.ftcdn.net/jpg/06/66/10/17/360_F_666101742_jQ4lZjz7HFgXZqAyHDoaXCTcXHXHKUwN.jpg",
     "email": "emily.johnson@example.com",

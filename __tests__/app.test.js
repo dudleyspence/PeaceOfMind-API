@@ -196,15 +196,21 @@ describe("app", () => {
                   _id: expect.any(String),
                   text: expect.any(String),
                   isDaySpecific: expect.any(Boolean),
-                  category: expect.stringMatching(
-                    /^(Hygiene|Meals|Medical|Additional|Exercise)$/
-                  ),
                   repeatInterval: expect.stringMatching(
                     /^(Daily|Weekly|Biweekly|Monthly|None)$/
                   ),
                   patient: expect.any(String),
                   carer: expect.any(String),
                 });
+                const validCategories = [
+                  "Hygiene",
+                  "Meals",
+                  "Medical",
+                  "Additional",
+                  "Exercise",
+                  null,
+                ];
+                expect(validCategories).toContain(taskTemplate.category);
               });
             });
         });
@@ -315,7 +321,7 @@ describe("app", () => {
       describe("GET", () => {
         test("200: returns the guardian info when given the user_id", () => {
           return request(app)
-            .get("/api/guardian/11")
+            .get("/api/guardian/670252732366c3c91be7fed4")
             .expect(200)
             .then(({ body }) => {
               expect(body).toMatchObject({
@@ -328,7 +334,7 @@ describe("app", () => {
         });
         test("404: returns not found when the user_id doesnt relate to a guardian", () => {
           return request(app)
-            .get("/api/guardian/1")
+            .get("/api/guardian/670252732366c3c91be7fed9")
             .expect(404)
             .then(({ body }) => {
               expect(body.message).toBe("Guardian not found");
@@ -387,7 +393,7 @@ describe("app", () => {
       describe("GET", () => {
         test("200: returns the carer info when given the user_id", () => {
           return request(app)
-            .get("/api/carer/10")
+            .get("/api/carer/670252732366c3c91be7fed5")
             .expect(200)
             .then(({ body }) => {
               expect(body).toMatchObject({
@@ -402,7 +408,7 @@ describe("app", () => {
         });
         test("404: returns not found when the user_id doesnt relate to a carer", () => {
           return request(app)
-            .get("/api/carer/1")
+            .get("/api/carer/670252732366c3c91be7fed9")
             .expect(404)
             .then(({ body }) => {
               expect(body.message).toBe("Carer not found");

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const CarerSchema = new mongoose.Schema(
   {
-    user: { type: String, ref: "User", required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     phone: String,
     address: String,
     patients: [{ type: mongoose.Schema.Types.ObjectId, ref: "Patient" }],

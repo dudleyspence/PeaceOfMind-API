@@ -1,7 +1,7 @@
 [
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c3" },
-    "user": "11",
+    "user": { "$oid": "670252732366c3c91be7fed4" },
     "phone": "987-654-3210",
     "patients": [
       { "$oid": "66e31b0dcdd5353bc16957c5" },
@@ -10,7 +10,7 @@
   },
   {
     "_id": { "$oid": "66e31b0dcdd5353bc16957c4" },
-    "user": "12",
+    "user": { "$oid": "670252732366c3c91be7fed3" },
     "phone": "876-543-2109",
     "patients": [{ "$oid": "66e31b0dcdd5353bc16957c5" }]
   }
