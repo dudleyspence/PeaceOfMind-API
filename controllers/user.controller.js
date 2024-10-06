@@ -51,9 +51,11 @@ exports.addNewUser = (req, res, next) => {
 
 exports.getUserByFirebaseUID = (req, res, next) => {
   const { firebaseUID } = req.params;
+  console.log("FirebaseUID:", firebaseUID);
 
   User.find({ firebaseUID: firebaseUID })
     .then((user) => {
+      conose(user, "<<<< user");
       if (!user) {
         return res.status(404).send({ message: "User not found" });
       }
