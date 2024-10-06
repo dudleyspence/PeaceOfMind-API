@@ -53,7 +53,7 @@ exports.getUserByFirebaseUID = (req, res, next) => {
   const { firebaseUID } = req.params;
   console.log("FirebaseUID:", firebaseUID);
 
-  User.find({ firebaseUID: firebaseUID })
+  User.findOne({ firebaseUID: firebaseUID })
     .then((user) => {
       console.log(user, "<<<< user");
       if (!user) {
