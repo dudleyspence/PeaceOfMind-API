@@ -48,3 +48,30 @@ exports.addNewUser = (req, res, next) => {
     })
     .catch(next);
 };
+
+exports.getUserByFirebaseUID = (req, res, next) => {
+  const { firebaseUID } = req.params;
+
+  User.find({ firebaseUID: firebaseUID })
+    .then((user) => {
+      if (!user) {
+        return res.status(404).send({ message: "User not found" });
+      }
+
+      if (user.role === "guardian") {
+        return Guardian.findOne({ user: user._id })
+          .populate("user")
+          .populate("patients");
+      }
+      if (user.role === "carer") {
+        return Carer.findOne({ user: user._id })
+          .populate("user")
+          .populate("patients");
+      }
+    })
+    .then((populatedUser) => {
+      console.log("Populated user:", populatedUser);
+      return res.status(200).send(populatedUser);
+    })
+    .catch(next);
+};
