@@ -55,7 +55,7 @@ exports.getUserByFirebaseUID = (req, res, next) => {
 
   User.find({ firebaseUID: firebaseUID })
     .then((user) => {
-      conose(user, "<<<< user");
+      conole.log(user, "<<<< user");
       if (!user) {
         return res.status(404).send({ message: "User not found" });
       }
