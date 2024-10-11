@@ -51,7 +51,7 @@ exports.addNewUser = (req, res, next) => {
 
 exports.getUserByFirebaseUID = (req, res, next) => {
   const { firebaseUID } = req.params;
-  console.log("FirebaseUID:", firebaseUID);
+  console.log("firebaseUID:", firebaseUID);
 
   User.findOne({ firebaseUID: firebaseUID })
     .then((user) => {
