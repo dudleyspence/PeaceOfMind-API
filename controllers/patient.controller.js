@@ -23,7 +23,12 @@ exports.getPatientById = (req, res, next) => {
         path: "user",
       },
     })
-    .populate("guardians")
+    .populate({
+      path: "guardians",
+      populate: {
+        path: "user",
+      },
+    })
     .then((patient) => {
       if (!patient) {
         return res.status(404).send({ message: "Patient not found" });
