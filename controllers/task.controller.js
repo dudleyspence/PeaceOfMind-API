@@ -29,7 +29,6 @@ exports.updateTaskTemplate = (req, res, next) => {
 
 exports.updateTaskInstance = (req, res, next) => {
   const { taskinstance_id } = req.params;
-  console.log(taskinstance_id);
 
   const updates = req.body;
 

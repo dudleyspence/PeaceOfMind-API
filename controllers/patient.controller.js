@@ -121,11 +121,9 @@ exports.getPatientTaskInstances = (req, res, next) => {
 
 exports.addNewPatient = (req, res, next) => {
   const newPatient = new Patient(req.body);
-  console.log(newPatient);
   newPatient
     .save()
     .then((patient) => {
-      console.log(patient);
       const guardianId = patient.guardians[0];
 
       return Guardian.findByIdAndUpdate(

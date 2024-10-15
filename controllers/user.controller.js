@@ -11,24 +11,20 @@ const mongoose = require("mongoose");
 
 exports.addNewUser = (req, res, next) => {
   const newUser = new User(req.body);
-  console.log(newUser);
 
   newUser
     .save()
     .then(() => {
       const userId = newUser._id;
-      console.log("UserID created:", userId);
 
       if (newUser.role === "guardian") {
         const newGuardian = new Guardian({ user: newUser._id });
-        console.log("Guardian created:", newGuardian);
         newGuardian
           .save()
           .then((guardian) => {
             return guardian.populate("user");
           })
           .then((populatedGuardian) => {
-            console.log("Guardian created:", populatedGuardian);
             return res.status(200).send(populatedGuardian);
           });
       } else if (newUser.role === "carer") {
@@ -39,7 +35,6 @@ exports.addNewUser = (req, res, next) => {
             return carer.populate("user");
           })
           .then((populatedCarer) => {
-            console.log("Carer created:", populatedCarer);
             return res.status(200).send(populatedCarer);
           });
       } else {
@@ -51,11 +46,9 @@ exports.addNewUser = (req, res, next) => {
 
 exports.getUserByFirebaseUID = (req, res, next) => {
   const { firebaseUID } = req.params;
-  console.log("firebaseUID:", firebaseUID);
 
   User.findOne({ firebaseUID: firebaseUID })
     .then((user) => {
-      console.log(user, "<<<< user");
       if (!user) {
         return res.status(404).send({ message: "User not found" });
       }
@@ -72,7 +65,6 @@ exports.getUserByFirebaseUID = (req, res, next) => {
       }
     })
     .then((populatedUser) => {
-      console.log("Populated user:", populatedUser);
       return res.status(200).send(populatedUser);
     })
     .catch(next);
