@@ -12,10 +12,6 @@ function initializeAgenda() {
     useUnifiedTopology: true,
   });
 
-  agenda.define("welcomeMessage", () => {
-    console.log("Sending a welcome message every few seconds");
-  });
-
   function calculateNextInstanceDate(currentDate, repeatInterval) {
     const nextDate = new Date(currentDate);
 
@@ -89,7 +85,7 @@ function startAgenda() {
     console.log("Agenda started successfully. Ready to process jobs.");
 
     agenda.every("0 0 * * *", "create daily task instances");
-    agenda.now("create daily task instances");
+    // agenda.now("create daily task instances");
   });
 }
 
