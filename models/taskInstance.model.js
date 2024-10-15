@@ -9,7 +9,6 @@ const TaskInstanceSchema = new mongoose.Schema(
     },
     scheduleDate: { type: Date, required: true }, // for repeating tasks this will just be set to today each time a new instance is created.
     isCompleted: { type: Boolean, default: false },
-    completedAt: { type: Date },
     patient: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Patient",
