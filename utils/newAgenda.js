@@ -39,10 +39,10 @@ function initializeAgenda() {
 
   agenda.define("create daily task instances", async (job, done) => {
     const todayStart = new Date();
-    todayStart.setUTCHours(0, 0, 0, 0);
+    todayStart.setHours(0, 0, 0, 0);
 
     const todayEnd = new Date(todayStart);
-    todayEnd.setUTCHours(23, 59, 59, 999);
+    todayEnd.setHours(23, 59, 59, 999);
 
     const templates = await TaskTemplate.find({
       nextInstanceDate: {
@@ -84,7 +84,12 @@ function startAgenda() {
   return agenda.start().then(() => {
     console.log("Agenda started successfully. Ready to process jobs.");
 
-    agenda.every("0 0 * * *", "create daily task instances");
+    agenda.every(
+      "0 0 * * *",
+      "create daily task instances",
+      {},
+      { timezone: "Europe/London" }
+    );
     // agenda.now("create daily task instances");
   });
 }
