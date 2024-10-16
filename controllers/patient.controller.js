@@ -8,6 +8,7 @@ const {
 } = require("../models/index.model");
 const mongoose = require("mongoose");
 const { getAge } = require("../utils/get_age");
+const { formatISO } = require("date-fns");
 
 exports.getPatientById = (req, res, next) => {
   const { patient_id } = req.params;
@@ -176,33 +177,15 @@ exports.getTasksForSpecificDay = (req, res, next) => {
     return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
   }
 
-  let date = new Date(isoDate);
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
 
-  let startOfDay = new Date(
-    Date.UTC(
-      date.getUTCFullYear(),
-      date.getUTCMonth(),
-      date.getUTCDate(),
-      0,
-      0,
-      0,
-      0
-    )
-  );
-  let startOfDayISO = startOfDay.toISOString();
+  let startOfDayISO = formatISO(todayStart);
 
-  let endOfDay = new Date(
-    Date.UTC(
-      date.getUTCFullYear(),
-      date.getUTCMonth(),
-      date.getUTCDate(),
-      23,
-      59,
-      59,
-      999
-    )
-  );
-  let endOfDayISO = endOfDay.toISOString();
+  const todayEnd = new Date(todayStart);
+  todayEnd.setHours(23, 59, 59, 999);
+
+  let endOfDayISO = formatISO(todayEnd);
 
   TaskInstance.find({
     patient: patient_id,
@@ -234,6 +217,35 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
     .populate("template")
     .then((instances) => {
       res.status(200).send(instances);
+    })
+    .catch(next);
+};
+
+exports.getTodaysProgress = (req, res, next) => {
+  const { patient_id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(patient_id)) {
+    return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
+  }
+
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+
+  const todayEnd = new Date(todayStart);
+  todayEnd.setHours(23, 59, 59, 999);
+
+  TaskInstance.find({
+    patient: patient_id,
+    scheduleDate: {
+      $gte: todayStart,
+      $lt: todayEnd,
+    },
+  })
+    .then((tasks) => {
+      const total = tasks.length;
+      const completed = tasks.filter((task) => task.completed).length;
+      const progress = total > 0 ? (completed / total) * 100 : 0;
+      res.status(200).send(progress);
     })
     .catch(next);
 };
