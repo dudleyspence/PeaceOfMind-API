@@ -208,11 +208,12 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
     return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
   }
 
-  const today = new Date();
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
 
   TaskInstance.find({
     patient: patient_id,
-    scheduleDate: { $gte: today },
+    scheduleDate: { $gte: todayStart },
   })
     .populate("template")
     .then((instances) => {
