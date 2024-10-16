@@ -223,6 +223,7 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
 
 exports.getTodaysProgress = (req, res, next) => {
   const { patient_id } = req.params;
+  console.log(patient_id);
 
   if (!mongoose.Types.ObjectId.isValid(patient_id)) {
     return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
