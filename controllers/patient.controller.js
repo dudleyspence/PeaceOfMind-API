@@ -217,7 +217,7 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
   })
     .populate("template")
     .then((instances) => {
-      res.status(200).send(instances);
+      return res.status(200).send(instances);
     })
     .catch(next);
 };
@@ -247,7 +247,7 @@ exports.getTodaysProgress = (req, res, next) => {
       const total = tasks.length;
       const completed = tasks.filter((task) => task.completed).length;
       const progress = total > 0 ? (completed / total) * 100 : 0;
-      res.status(200).send(progress);
+      return res.status(200).send(progress);
     })
     .catch(next);
 };
