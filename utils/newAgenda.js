@@ -17,16 +17,16 @@ function initializeAgenda() {
 
     switch (repeatInterval) {
       case "Daily":
-        nextDate.setDate(nextDate.getDate() + 1);
+        nextDate.setUTCDate(nextDate.getUTCDate() + 1);
         break;
       case "Weekly":
-        nextDate.setDate(nextDate.getDate() + 7);
+        nextDate.setUTCDate(nextDate.getUTCDate() + 7);
         break;
       case "Biweekly":
-        nextDate.setDate(nextDate.getDate() + 14);
+        nextDate.setUTCDate(nextDate.getUTCDate() + 14);
         break;
       case "Monthly":
-        nextDate.setMonth(nextDate.getMonth() + 1);
+        nextDate.setUTCMonth(nextDate.getUTCMonth() + 1);
         break;
       case "None":
         return null;
@@ -39,10 +39,10 @@ function initializeAgenda() {
 
   agenda.define("create daily task instances", async (job, done) => {
     const todayStart = new Date();
-    todayStart.setHours(0, 0, 0, 0);
+    todayStart.setUTCHours(0, 0, 0, 0);
 
     const todayEnd = new Date(todayStart);
-    todayEnd.setHours(23, 59, 59, 999);
+    todayEnd.setUTCHours(23, 59, 59, 999);
 
     const templates = await TaskTemplate.find({
       nextInstanceDate: {
@@ -84,12 +84,7 @@ function startAgenda() {
   return agenda.start().then(() => {
     console.log("Agenda started successfully. Ready to process jobs.");
 
-    agenda.every(
-      "0 0 * * *",
-      "create daily task instances",
-      {},
-      { timezone: "Europe/London" }
-    );
+    agenda.every("0 0 * * *", "create daily task instances", {});
     // agenda.now("create daily task instances");
   });
 }
