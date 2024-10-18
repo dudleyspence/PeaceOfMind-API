@@ -199,7 +199,7 @@ exports.getTasksForSpecificDay = (req, res, next) => {
     .catch(next);
 };
 
-exports.getScheduledDaySpecificTasks = (req, res, next) => {
+exports.getScheduledAppointments = (req, res, next) => {
   const { patient_id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(patient_id)) {
@@ -215,7 +215,11 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
   })
     .populate("template")
     .then((instances) => {
-      return res.status(200).send(instances);
+      const filteredInstances = instances.filter(
+        (instance) => instance.template.isDaySpecific === true
+      );
+
+      return res.status(200).send(filteredInstances);
     })
     .catch(next);
 };

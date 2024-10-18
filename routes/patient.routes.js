@@ -8,7 +8,7 @@ const {
   addNewPatient,
   updatePatientInfo,
   getTasksForSpecificDay,
-  getScheduledDaySpecificTasks,
+  getScheduledAppointments,
   getTodaysProgress,
 } = require("../controllers/patient.controller");
 
@@ -22,9 +22,6 @@ router.patch("/patients/:patient_id", updatePatientInfo);
 router.get("/patients/:patient_id/tasks/:isoDate", getTasksForSpecificDay);
 router.get("/patients/:patient_id/todays-progress", getTodaysProgress);
 
-router.get(
-  "/patients/:patient_id/scheduled-tasks",
-  getScheduledDaySpecificTasks
-);
+router.get("/patients/:patient_id/scheduled-tasks", getScheduledAppointments);
 
 module.exports = router;
