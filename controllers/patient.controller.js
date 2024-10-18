@@ -241,11 +241,9 @@ exports.getTodaysProgress = (req, res, next) => {
     },
   })
     .then((tasks) => {
-      console.log(tasks);
       const total = tasks.length;
-      const completed = tasks.filter((task) => task.completed).length;
+      const completed = tasks.filter((task) => task.isCompleted).length;
       const progress = total > 0 ? (completed / total) * 100 : 0;
-      console.log(progress);
       return res.status(200).send({ progress });
     })
     .catch(next);
