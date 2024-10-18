@@ -100,7 +100,7 @@
     "category": null,
     "repeatInterval": "None",
     "startDate": { "$date": "2024-10-15T00:00:00Z" },
-    "nextInstanceDate": { "$date": "2024-10-19T00:00:00Z" },
+    "nextInstanceDate": { "$date": "2024-10-30T00:00:00Z" },
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -146,7 +146,7 @@
     "category": "Additional",
     "repeatInterval": "Biweekly",
     "startDate": { "$date": "2024-10-15T00:00:00Z" },
-    "nextInstanceDate": { "$date": "2024-10-09T00:00:00Z" },
+    "nextInstanceDate": { "$date": "2024-10-20T00:00:00Z" },
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   },
@@ -169,7 +169,7 @@
     "category": "Additional",
     "repeatInterval": "Weekly",
     "startDate": { "$date": "2024-10-15T00:00:00Z" },
-    "nextInstanceDate": { "$date": "2024-10-19T00:00:00Z" },
+    "nextInstanceDate": { "$date": "2024-10-23T00:00:00Z" },
     "patient": { "$oid": "66e31b0dcdd5353bc16957c5" },
     "carer": { "$oid": "66e31b0dcdd5353bc16957c2" }
   }

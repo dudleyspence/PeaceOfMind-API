@@ -194,7 +194,6 @@ exports.getTasksForSpecificDay = (req, res, next) => {
   })
     .populate("template")
     .then((tasks) => {
-      console.log(tasks);
       res.status(200).send(tasks);
     })
     .catch(next);
@@ -223,7 +222,6 @@ exports.getScheduledDaySpecificTasks = (req, res, next) => {
 
 exports.getTodaysProgress = (req, res, next) => {
   const { patient_id } = req.params;
-  console.log(patient_id);
 
   if (!mongoose.Types.ObjectId.isValid(patient_id)) {
     return res.status(400).send({ message: "Bad Request: Invalid Patient ID" });
@@ -243,6 +241,7 @@ exports.getTodaysProgress = (req, res, next) => {
     },
   })
     .then((tasks) => {
+      console.log(tasks);
       const total = tasks.length;
       const completed = tasks.filter((task) => task.completed).length;
       const progress = total > 0 ? (completed / total) * 100 : 0;
