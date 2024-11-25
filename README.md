@@ -27,7 +27,6 @@ The Peace of Mind API is the backend service for the Peace of Mind application, 
 -   **MongoDB**: NoSQL database for storing user, patient, and task data.
 -   **Mongoose**: ODM for managing MongoDB schemas and data relationships.
 -   **Firebase Authentication**: Secure user login and account management.
--   **JWT**: Authorization and session management.
 -   **Jest**: JavaScript testing framework for endpoint and functionality testing.
 -   **Railway**: Hosting platform for API deployment.
 
