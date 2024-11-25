@@ -49,23 +49,6 @@ The project uses robust validation and flexible routing to ensure reliability an
 
 ----------
 
-## **Key Endpoints**
-
-### **Patients**
-- `GET /patients/{patient_id}`: Retrieve patient details.
-- `POST /patients`: Create a new patient profile.
-- `PATCH /patients/{patient_id}`: Update patient details.
-- `GET /patients/{patient_id}/tasks/{isoDate}`: Fetch tasks for a specific date.
-
-### **Tasks**
-- `POST /tasks`: Create a new task for a patient.
-- `PATCH /tasks/templates/{template_id}`: Modify a task template.
-- `DELETE /tasks/instances/{instance_id}`: Remove a specific task instance.
-
-### **Comments**
-- `POST /comments`: Add a comment to a task or patient.
-- `GET /patients/{patient_id}/{isoDate}/comments`: Fetch all comments for a specific patient on a particular date.
-
 For a complete list of endpoints, refer to the [API Documentation](https://peaceofmind-api-production.up.railway.app/docs/).
 
 ----------
