@@ -52,23 +52,7 @@ Access the API Documentation:
 
 ## **API Endpoints**
 
-The API provides endpoints to handle tasks, users, patients, and authentication. Key examples include:
-
-### **Users**
-- `POST /auth/register`: Register a new guardian or carer using Firebase Authentication.
-- `POST /auth/login`: Authenticate a user and retrieve a token.
-
-### **Patients**
-- `POST /patients`: Create a new patient profile.
-- `GET /patients/{patient_id}`: Retrieve patient details.
-- `PATCH /patients/{patient_id}`: Update patient details.
-- `GET /patients/{patient_id}/tasks`: Get tasks associated with a patient.
-
-### **Tasks**
-- `POST /tasks`: Create a new task for a patient.
-- `PATCH /tasks/{task_id}`: Update task details.
-- `DELETE /tasks/{task_id}`: Delete a task.
-- `PATCH /tasks/complete/{task_id}`: Mark a task as completed and add notes.
+The API provides endpoints to handle tasks, users, patients, and authentication. 
 
 For a complete list of endpoints and details, refer to the [API Documentation](https://peaceofmind-api-production.up.railway.app/docs/).
 ### **Installation**
