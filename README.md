@@ -1,6 +1,4 @@
-Here’s the updated README to include Firebase authentication and the endpoint testing with Jest:
 
----
 
 # **Peace of Mind API**
 
